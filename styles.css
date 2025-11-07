@@ -4,7 +4,6 @@
 
 .rubiks-cube {
     transform-style: preserve-3d;
-    transform: rotateX(20deg) rotateY(45deg); 
     /* Aangepast: Een kortere, vloeiendere transitie */
     transition: transform 0.05s ease-out; 
     cursor: grab; 
@@ -20,9 +19,9 @@
     height: 100%;
     backface-visibility: hidden;
     border: 5px solid #333;
+    cursor: pointer
 }
 
-/* Face positionering */
 .front { transform: translateZ(150px); }
 .back { transform: rotateY(180deg) translateZ(150px); }
 .right { transform: rotateY(90deg) translateZ(150px); }
@@ -31,5 +30,5 @@
 .bottom { transform: rotateX(-90deg) translateZ(150px); }
 
 .face > div {
-    border: 4px solid black;
+  border: 3px solid black;
 }

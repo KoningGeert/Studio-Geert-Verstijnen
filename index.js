@@ -1,82 +1,110 @@
 const cube = document.getElementById('cube');
+const faces = document.querySelectorAll('.face');
+
 let isDragging = false;
-let startX, startY;
-let rotX = 20; // Beginrotatie X
-let rotY = 45; // Beginrotatie Y
-let lastDeltaX = 0; // Houdt de snelheid van de laatste muisbeweging bij
-let lastDeltaY = 0;
-let speedX = 0; // Snelheid in X richting na het loslaten van de muis
-let speedY = 0; // Snelheid in Y richting na het loslaten van de muis
+let startX;
+let rotX = 0=; // vaste tilt
+let rotY = 345;
+let lastDeltaX = 0;
+let speedX = 0;
+let moved = false;
+const SENSITIVITY = 4;
 
-const SENSITIVITY = 4; // Gevoeligheid, lager = soepeler
-
-// Functie om de kubus daadwerkelijk te roteren
+// Update functie
 function updateRotation() {
-    cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+  const currentFace = getFrontFace();
+  updateFaceTitle(currentFace);
 }
 
-// Functie om momentum toe te voegen en de kubus langzaam af te laten remmen
+// Momentum
 function applyMomentum() {
-    if (Math.abs(speedX) > 0.1 || Math.abs(speedY) > 0.1) {
-        // Verminder de snelheid een beetje om te zorgen voor een langzaam afremmend effect
-        speedX *= 0.95;
-        speedY *= 0.95;
-
-        // Pas de rotatie aan met de snelheid
-        rotX -= speedY / SENSITIVITY;
-        rotY += speedX / SENSITIVITY;
-
-        // Update de rotatie in de CSS
-        updateRotation();
-
-        // Blijf de momentum functie aanroepen
-        requestAnimationFrame(applyMomentum);
-    }
+  if (Math.abs(speedX) > 0.1) {
+    speedX *= 0.95;
+    rotY += speedX / SENSITIVITY;
+    updateRotation();
+    requestAnimationFrame(applyMomentum);
+  }
 }
 
-// 1. Muizenknop ingedrukt (begin van het slepen)
+// Begin slepen
 cube.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    e.preventDefault();
+  isDragging = true;=
+  moved = false;
+  startX = e.clientX;
+  e.preventDefault();
 });
 
-// 2. Muis beweegt (tijdens het slepen)
+// Tijdens slepen (alleen horizontaal)
 document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
+  if (!isDragging) return;
 
-    // Bereken de verplaatsing van de muis
-    const deltaX = e.clientX - startX;
-    const deltaY = e.clientY - startY;
+  const deltaX = e.clientX - startX;
 
-    // Pas de rotatie aan met de nieuwe gevoeligheidsfactor
-    rotX -= deltaY / SENSITIVITY;
-    rotY += deltaX / SENSITIVITY;
+  if (Math.abs(deltaX) > 5) moved = true;
 
-    // Update de rotatie in de CSS
-    updateRotation();
-    
-    // Sla de snelheid op voor momentum na het loslaten van de muis
-    lastDeltaX = deltaX;
-    lastDeltaY = deltaY;
+  rotY += deltaX / SENSITIVITY;
+  updateRotation();
 
-    // De startpositie resetten voor de volgende kleine beweging
-    startX = e.clientX;
-    startY = e.clientY;
+  lastDeltaX = deltaX;
+  startX = e.clientX;
 });
 
-// 3. Muizenknop losgelaten (einde van het slepen)
+// Loslaten
 document.addEventListener('mouseup', () => {
-    isDragging = false;
-
-    // Sla de snelheid op bij het loslaten van de muis
-    speedX = lastDeltaX;
-    speedY = lastDeltaY;
-
-    // Start het momentum effect
-    applyMomentum();
+  isDragging = false;
+  speedX = lastDeltaX;
+  applyMomentum();
 });
 
-// Initieel de kubus tonen
+// Klikbare faces
+faces.forEach(face => {
+  face.addEventListener('click', (e) => {
+    if (moved) return;
+    switch (true) {
+      case face.classList.contains('front'):
+        window.location.href = './pages/wiebenik.html';
+        break;
+      case face.classList.contains('back'):
+        window.location.href = './pages/projecten.html';
+        break;
+      case face.classList.contains('left'):
+        window.location.href = './pages/mijnidee.html';
+        break;
+      case face.classList.contains('right'):
+        window.location.href = './pages/linkjes.html';
+        break;
+      case face.classList.contains('top'):
+        window.location.href = './pages/about.html';
+        break;
+      case face.classList.contains('bottom'):
+        window.location.href = './pages/contact.html';
+        break;
+    }
+  });
+});
+
+function getFrontFace() {
+    // Normaliseer rotY naar 0-360 graden
+    let y = rotY % 360;
+    if (y < 0) y += 360;
+  
+    if (y >= 315 || y < 45) return 'front';
+    if (y >= 45 && y < 135) return 'right';
+    if (y >= 135 && y < 225) return 'back';
+    if (y >= 225 && y < 315) return 'left';
+  }
+
+  
+function updateFaceTitle(face) {
+    const titleEl = document.getElementById('face-title');
+    if(face === 'front') titleEl.textContent = 'Wie ben ik';
+    if(face === 'back') titleEl.textContent = 'Portfolio';
+    if(face === 'left') titleEl.textContent = 'Contact';
+    if(face === 'right') titleEl.textContent = 'Over mij';
+    if(face === 'top') titleEl.textContent = 'Projecten';
+    if(face === 'bottom') titleEl.textContent = 'Blog';
+  }
+  
 updateRotation();

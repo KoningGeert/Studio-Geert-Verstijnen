@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Geert Verstijnen - Interactieve Rubik's Cube</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Geert Verstijnen - Interactieve Rubik's Cube</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @keyframes pulseGlow {
+      0% {
+        filter: drop-shadow(0 0 15px var(--cube-blue))
+                drop-shadow(0 0 25px var(--cube-yellow))
+                drop-shadow(0 0 35px var(--cube-red))
+                drop-shadow(0 0 45px var(--cube-green));
+      }
+      50% {
+        filter: drop-shadow(0 0 30px var(--cube-yellow))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-green))
+                drop-shadow(0 0 80px var(--cube-red));
+      }
+      100% {
+        filter: drop-shadow(0 0 20px var(--cube-green))
+                drop-shadow(0 0 30px var(--cube-red))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-yellow));
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-200 flex justify-center items-center h-screen">
+<body class="bg-gray-200 flex justify-center items-center h-screen"  style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
 
-    <div class="rubiks-cube-container">
-        
-        <div id="cube" class="rubiks-cube relative w-[300px] h-[300px]">
+  <!-- Titel -->
+  <div id="face-title" class="absolute top-0 left-0 w-full text-center text-[10vw] font-extrabold text-gray-900 pointer-events-none">
+    Wie ben ik
+  </div>
 
-            <div class="face front grid grid-cols-3 bg-red-600">
-                <div class="w-full h-full bg-blue-500"></div>
-                <div class="w-full h-full bg-green-500"></div>
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-orange-500"></div>
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-                <div class="w-full h-full bg-gray-100"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-            </div>
+  <!-- Rubik's Cube Container -->
+  <div class="rubiks-cube-container shadow-xl animate-[pulseGlow_6s_ease-in-out_infinite_alternate]">
+    <div id="cube" class="rubiks-cube relative w-[300px] h-[300px] transition-transform duration-700 ease-out transform-style-preserve-3d">
 
-            <div class="face back grid grid-cols-3 bg-blue-600">
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-orange-500"></div>
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-                <div class="w-full h-full bg-blue-600"></div>
-                <div class="w-full h-full bg-green-500"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-                <div class="w-full h-full bg-purple-500"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-            </div>
+      <!-- FRONT -->
+      <div class="face front grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Blauw/Blauw Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Blauw/Blauw Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Blauw/Blauw ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
 
-            <div class="face left grid grid-cols-3 bg-green-600">
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-blue-600"></div>
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-orange-500"></div>
-                <div class="w-full h-full bg-green-600"></div>
-                <div class="w-full h-full bg-gray-100"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-            </div>
+      <!-- BACK -->
+      <div class="face back grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/Geel/Geel Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Geel/Geel Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Geel/Geel ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
 
-            <div class="face right grid grid-cols-3 bg-yellow-500">
-                <div class="w-full h-full bg-purple-500"></div>
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-                <div class="w-full h-full bg-blue-600"></div>
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-green-600"></div>
-                <div class="w-full h-full bg-gray-100"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-            </div>
+      <!-- LEFT -->
+      <div class="face left grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/Groen/Groen Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Groen/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Groen/Groen ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
 
-            <div class="face top grid grid-cols-3 bg-orange-600">
-                <div class="w-full h-full bg-blue-600"></div>
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-green-600"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-                <div class="w-full h-full bg-orange-600"></div>
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-                <div class="w-full h-full bg-gray-100"></div>
-            </div>
+      <!-- RIGHT -->
+      <div class="face right grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/Rood/Rood Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Rood/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Rood/Rood Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
 
-            <div class="face bottom grid grid-cols-3 bg-gray-100">
-                <div class="w-full h-full bg-orange-600"></div>
-                <div class="w-full h-full bg-green-600"></div>
-                <div class="w-full h-full bg-yellow-500"></div>
-                <div class="w-full h-full bg-teal-500"></div>
-                <div class="w-full h-full bg-gray-100"></div>
-                <div class="w-full h-full bg-red-600"></div>
-                <div class="w-full h-full bg-pink-500"></div>
-                <div class="w-full h-full bg-indigo-500"></div>
-                <div class="w-full h-full bg-blue-600"></div>
-            </div>
+      <!-- TOP -->
+      <div class="face top grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/projecten1.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/projecten2.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/projecten3.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/projecten4.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
 
-        </div>
+      <!-- BOTTOM -->
+      <div class="face bottom grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="./images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="./images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
     </div>
-<script src="index.js"></script>
+  </div>
 
+  <script src="index.js"></script>
 </body>
 </html>
