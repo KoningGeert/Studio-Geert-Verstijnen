@@ -3,7 +3,7 @@ const faces = document.querySelectorAll('.face');
 
 let isDragging = false;
 let startX;
-let rotX = 0=; // vaste tilt
+let rotX = 0; // vaste tilt
 let rotY = 345;
 let lastDeltaX = 0;
 let speedX = 0;
@@ -30,7 +30,7 @@ function applyMomentum() {
 
 // Begin slepen
 cube.addEventListener('mousedown', (e) => {
-  isDragging = true;=
+  isDragging = true;
   moved = false;
   startX = e.clientX;
   e.preventDefault();
