@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Gothic+A1&display=swap" rel="stylesheet">
+
+  <!-- Animatie -->
+  <style>
+    @keyframes pulseGlow {
+      0% {
+        filter: drop-shadow(0 0 15px var(--cube-blue))
+                drop-shadow(0 0 25px var(--cube-yellow))
+                drop-shadow(0 0 35px var(--cube-red))
+                drop-shadow(0 0 45px var(--cube-green));
+      }
+      50% {
+        filter: drop-shadow(0 0 30px var(--cube-yellow))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-green))
+                drop-shadow(0 0 80px var(--cube-red));
+      }
+      100% {
+        filter: drop-shadow(0 0 20px var(--cube-green))
+                drop-shadow(0 0 30px var(--cube-red))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-yellow));
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-200">
+
+  <header class="w-full">
+
+    <style>
+        /* * 1. ANIMATIE DEFINITIE
+         * De 'cubeRattle' is vervangen door een meer dynamische 3D-draaiing.
+         */
+        @keyframes cubeTwistFlip {
+          0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
+          50%  { transform: rotate3d(1, 1, 0.5, 30deg) scale(1.05); } /* Pop-out & Draai */
+          100% { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
+        }
+        
+        /* 2. BASIS 3D-INSTELLINGEN
+         * Belangrijk: Perspective op de oudercontainer en preserve-3d op de kubus.
+         */
+        .cube-wrapper {
+            /* Dit is de div met de classes 'group [perspective:800px]' */
+            perspective: 800px; 
+        }
+
+        .cube-grid {
+            /* Dit is de div met de classes 'grid grid-cols-2...' */
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease-in-out;
+            /* Zorg dat de kubus niet verschuift als de muis erop komt */
+            transform: translateZ(0); 
+        }
+
+        /* 3. HOVER EFFECT
+         * Bij hover, voeren we een eenmalige, opvallende animatie uit.
+         */
+        .cube-wrapper:hover .cube-grid {
+            /* Gebruik de 'cubeTwistFlip' animatie op hover */
+            animation: cubeTwistFlip 0.6s ease-in-out 1;
+            /* Na de animatie eindigen we met een lichte, permanente draaiing
+               die blijft zolang je hovert, voor een 'ready-to-go' gevoel. */
+            transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+        }
+    </style>
+
+<div class="px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4 group cube-wrapper">
+        
+        <div class="grid grid-cols-2 grid-rows-2 w-12 h-12 cube-grid">
+          
+          <img src="./images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
+          <img src="./images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
+          <img src="./images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
+          <img src="./images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
+        </div>  
+
+        <div class="flex flex-col">
+          <h1 class="text-xl font-bold font-heading">Studio</h1>
+          <h2 class="text-sm font-body">Geert Verstijnen</h2>
+        </div>
+      </div>
+
+
+      <button 
+        id="menu-btn"
+        class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none"
+        aria-label="Menu"
+      >
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+      </button>
+  
+      <!-- Navigatie -->
+      <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 font-body">
+        <a href="/index.html" class="text-gray-700 hover:text-black flex gap-2">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-6 h-6 object-cover">
+          <div class="text-rood">Home</div>
+        </a>
+        <a href="/pages/Portfolio.html" class="text-gray-700 hover:text-black flex gap-2">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-6 h-6 object-cover">
+          <div class="text-groen">Portfolio</div>
+        </a>       
+        <a href="/pages/Over mij.html" class="text-gray-700 hover:text-black flex gap-2">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-6 h-6 object-cover">
+          <div class="text-geel">Over mij</div>
+        </a>      
+        <a href="/pages/Contact.html" class="text-gray-700 hover:text-black flex gap-2">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-6 h-6 object-cover">
+          <div class="text-blauw">Contact</div>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Content injectie -->
+  
+
+  <footer class="w-full bg-gray-900 text-gray-100 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      
+      <!-- Links -->
+      <div class="flex flex-col md:flex-row gap-6 text-center md:text-left">
+        <a href="./pages/about.html" class="hover:text-blue-400 transition-colors">Over mij</a>
+        <a href="./pages/portfolio.html" class="hover:text-green-400 transition-colors">Portfolio</a>
+        <a href="./pages/contact.html" class="hover:text-red-400 transition-colors">Contact</a>
+      </div>
+  
+      <!-- Copy + Social -->
+      <div class="mt-4 md:mt-0 text-center md:text-right flex flex-col gap-2">
+        <p class="text-sm">&copy; 2025 Geert Verstijnen. Alle rechten voorbehouden.</p>
+        <div class="flex justify-center md:justify-end gap-4">
+          <a href="https://github.com/" target="_blank" class="hover:text-gray-300 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" class="hover:text-gray-300 transition-colors">LinkedIn</a>
+          <a href="https://twitter.com/" target="_blank" class="hover:text-gray-300 transition-colors">Twitter</a>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+  
+
+  <script src="/scripts/index.js"></script>
+</body>
+</html>

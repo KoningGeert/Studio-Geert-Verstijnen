@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --color-rood: #FD3F03;
+    --color-groen: #2F7339;
+    --color-geel: #FFC90F;
+    --color-blauw: #0C89FF;
+    --font-heading: "Geologica", sans-serif;
+    --font-body: "Gothic A1", sans-serif;
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }}{% else %}Studio Geert Verstijnen{% endif %}</title>
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Gothic+A1&display=swap" rel="stylesheet">
+
+  <!-- Animatie -->
+  <style>
+    @keyframes pulseGlow {
+      0% {
+        filter: drop-shadow(0 0 15px var(--cube-blue))
+                drop-shadow(0 0 25px var(--cube-yellow))
+                drop-shadow(0 0 35px var(--cube-red))
+                drop-shadow(0 0 45px var(--cube-green));
+      }
+      50% {
+        filter: drop-shadow(0 0 30px var(--cube-yellow))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-green))
+                drop-shadow(0 0 80px var(--cube-red));
+      }
+      100% {
+        filter: drop-shadow(0 0 20px var(--cube-green))
+                drop-shadow(0 0 30px var(--cube-red))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-yellow));
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-200">
+
+  {% include "header.html" %}
+
+  <!-- Content injectie -->
+  {{ content }}
+
+  {% include "footer.html" %}
+
+  <script src="/scripts/index.js"></script>
+</body>
+</html>

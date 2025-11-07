@@ -217,13 +217,27 @@ function getFrontFace() {
 
 function updateFaceTitle(face) {
   const titleEl = document.getElementById('face-title');
-  if(face === 'front') titleEl.textContent = 'Wie ben ik';
-  if(face === 'back') titleEl.textContent = 'Portfolio';
-  if(face === 'left') titleEl.textContent = 'Contact';
-  if(face === 'right') titleEl.textContent = 'Over mij';
-  if(face === 'top') titleEl.textContent = 'Projecten';
-  if(face === 'bottom') titleEl.textContent = 'Blog';
+  
+  switch (face) {
+    case 'front':
+      titleEl.textContent = 'Geert Verstijnen';
+      break;
+    case 'back':
+      titleEl.textContent = 'Over mij';
+      break;
+    case 'left':
+      titleEl.textContent = 'Portfolio';
+      break;
+    case 'right':
+      titleEl.textContent = 'Contact';
+      break;
+    default:
+      titleEl.textContent = '';
+      titleEl.style.color = '#000';
+  }
 }
+
+
 
 updateRotation();
 

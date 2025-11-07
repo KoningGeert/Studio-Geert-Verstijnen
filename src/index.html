@@ -1,42 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio Geert Verstijnen - Interactieve Rubik's Cube</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/styles/styles.css">
-  <style>
-    @keyframes pulseGlow {
-      0% {
-        filter: drop-shadow(0 0 15px var(--cube-blue))
-                drop-shadow(0 0 25px var(--cube-yellow))
-                drop-shadow(0 0 35px var(--cube-red))
-                drop-shadow(0 0 45px var(--cube-green));
-      }
-      50% {
-        filter: drop-shadow(0 0 30px var(--cube-yellow))
-                drop-shadow(0 0 50px var(--cube-blue))
-                drop-shadow(0 0 60px var(--cube-green))
-                drop-shadow(0 0 80px var(--cube-red));
-      }
-      100% {
-        filter: drop-shadow(0 0 20px var(--cube-green))
-                drop-shadow(0 0 30px var(--cube-red))
-                drop-shadow(0 0 50px var(--cube-blue))
-                drop-shadow(0 0 60px var(--cube-yellow));
-      }
-    }
-  </style>
-</head>
-<body class="bg-gray-200">
+---
+layout: layouts/base.html
+title: Studio Geert Verstijnen - Interactieve Rubik's Cube
+---
+<div class="relative bg-gray-200 flex justify-center items-center h-screen"  
+     style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
 
-{% include "header.html" %}
-  
-
-<div class="relative bg-gray-200 flex justify-center items-center h-screen"  style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
   <!-- Titel -->
-  <div id="face-title" class="absolute top-0 w-full text-center text-[10vw] font-extrabold text-gray-900 pointer-events-none">
+  <div id="face-title" class="absolute top-0 w-full font-heading text-center text-[8vw] font-extrabold text-gray-900 pointer-events-none">
     Wie ben ik
   </div>
 
@@ -44,9 +14,5 @@
     Geert
   </div>
 
-        {% include "cube.html" %}
+  {% include "cube.html" %}
 </div>
-
-  <script src="/scripts/index.js"></script>
-</body>
-</html>

@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studio Geert Verstijnen - Interactieve Rubik's Cube</title>
+  
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/output.css">
   <link rel="stylesheet" href="/styles/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Gothic+A1&display=swap" rel="stylesheet">
+
+  <!-- Animatie -->
   <style>
     @keyframes pulseGlow {
       0% {
@@ -31,7 +41,7 @@
 </head>
 <body class="bg-gray-200">
 
-<header class="w-full">
+  <header class="w-full">
 
     <style>
         /* * 1. ANIMATIE DEFINITIE
@@ -83,8 +93,8 @@
         </div>  
 
         <div class="flex flex-col">
-          <h1 class="text-xl font-bold">Studio</h1>
-          <h2 class="text-sm">Geert Verstijnen</h2>
+          <h1 class="text-xl font-bold font-heading">Studio</h1>
+          <h2 class="text-sm font-body">Geert Verstijnen</h2>
         </div>
       </div>
 
@@ -100,31 +110,33 @@
       </button>
   
       <!-- Navigatie -->
-      <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0">
-        <a href="#" class="text-gray-700 hover:text-black flex gap-2">
+      <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 font-body">
+        <a href="/index.html" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-6 h-6 object-cover">
-          <div>Projecten</div>
+          <div class="text-rood">Home</div>
         </a>
-        <a href="#" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/pages/Portfolio.html" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Groen/Groen Hoek.png" alt="" class="w-6 h-6 object-cover">
-          <div>Projecten</div>
+          <div class="text-groen">Portfolio</div>
         </a>       
-        <a href="#" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/pages/Over mij.html" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-6 h-6 object-cover">
-          <div>Projecten</div>
+          <div class="text-geel">Over mij</div>
         </a>      
-        <a href="#" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/pages/Contact.html" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-6 h-6 object-cover">
-          <div>Projecten</div>
+          <div class="text-blauw">Contact</div>
         </a>
       </nav>
     </div>
   </header>
-  
 
-<div class="relative bg-gray-200 flex justify-center items-center h-screen"  style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+  <!-- Content injectie -->
+  <div class="relative bg-gray-200 flex justify-center items-center h-screen"  
+     style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+
   <!-- Titel -->
-  <div id="face-title" class="absolute top-0 w-full text-center text-[10vw] font-extrabold text-gray-900 pointer-events-none">
+  <div id="face-title" class="absolute top-0 w-full font-heading text-center text-[8vw] font-extrabold text-gray-900 pointer-events-none">
     Wie ben ik
   </div>
 
@@ -132,16 +144,16 @@
     Geert
   </div>
 
-         <!-- Rubik's Cube Container -->
+   <!-- Rubik's Cube Container -->
   <div class="rubiks-cube-container shadow-xl animate-[pulseGlow_6s_ease-in-out_infinite_alternate]">
-    <div id="cube" class="rubiks-cube relative w-[300px] h-[300px] transition-transform duration-700 ease-out transform-style-preserve-3d">
+    <div id="cube" class="rubiks-cube relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] transition-transform duration-700 ease-out transform-style-preserve-3d">
 
       <!-- FRONT -->
       <div class="face front grid grid-cols-2 grid-rows-2 bg-gray-800">
-        <div><img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Blauw/Blauw Cirkel.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Blauw/Blauw Hoek.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Blauw/Blauw ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
       </div>
 
       <!-- BACK -->
@@ -154,18 +166,19 @@
 
       <!-- LEFT -->
       <div class="face left grid grid-cols-2 grid-rows-2 bg-gray-800">
-        <div><img src="/images/Groen/Groen Bonen.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Groen/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Groen/Groen ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw ZigZag.png" alt="" class="w-full h-full object-cover"></div>
       </div>
 
       <!-- RIGHT -->
       <div class="face right grid grid-cols-2 grid-rows-2 bg-gray-800">
-        <div><img src="/images/Rood/Rood Bonen.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Rood/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Rood/Rood Hoek.png" alt="" class="w-full h-full object-cover"></div>
-        <div><img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+
       </div>
 
       <!-- TOP -->
@@ -187,6 +200,31 @@
     </div>
   </div>
 </div>
+
+
+  <footer class="w-full bg-gray-900 text-gray-100 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      
+      <!-- Links -->
+      <div class="flex flex-col md:flex-row gap-6 text-center md:text-left">
+        <a href="./pages/about.html" class="hover:text-blue-400 transition-colors">Over mij</a>
+        <a href="./pages/portfolio.html" class="hover:text-green-400 transition-colors">Portfolio</a>
+        <a href="./pages/contact.html" class="hover:text-red-400 transition-colors">Contact</a>
+      </div>
+  
+      <!-- Copy + Social -->
+      <div class="mt-4 md:mt-0 text-center md:text-right flex flex-col gap-2">
+        <p class="text-sm">&copy; 2025 Geert Verstijnen. Alle rechten voorbehouden.</p>
+        <div class="flex justify-center md:justify-end gap-4">
+          <a href="https://github.com/" target="_blank" class="hover:text-gray-300 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" class="hover:text-gray-300 transition-colors">LinkedIn</a>
+          <a href="https://twitter.com/" target="_blank" class="hover:text-gray-300 transition-colors">Twitter</a>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+  
 
   <script src="/scripts/index.js"></script>
 </body>
