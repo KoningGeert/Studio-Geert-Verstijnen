@@ -91,7 +91,7 @@ cube.addEventListener('touchmove', (e) => {
   if (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5) moved = true;
 
   rotY += deltaX / SENSITIVITY;
-  rotX -= deltaY / SENSITIVITY; // verticale tilt optioneel
+  rotX -= deltaY / SENSITIVITY;
 
   updateRotation();
 
@@ -110,23 +110,25 @@ cube.addEventListener('touchend', () => {
 });
 
 // ------------------
-// INTERACTIEVE TILT OP MUIS
+// INTERACTIEVE TILT OP MUIS (desktop only)
 // ------------------
-window.addEventListener('mousemove', (e) => {
-  const { innerWidth, innerHeight } = window;
+if (window.innerWidth > 768) {
+  window.addEventListener('mousemove', (e) => {
+    const { innerWidth, innerHeight } = window;
 
-  const normalizedX = (e.clientX / innerWidth) * 2 - 1;
-  const normalizedY = (e.clientY / innerHeight) * 2 - 1;
+    const normalizedX = (e.clientX / innerWidth) * 2 - 1;
+    const normalizedY = (e.clientY / innerHeight) * 2 - 1;
 
-  tiltX = -normalizedY * MAX_TILT;
-  tiltY = -normalizedX * MAX_TILT; // horizontaal correct
-});
+    // Kubus "kijkt" naar muispositie
+    tiltX = -normalizedY * MAX_TILT;
+    tiltY = normalizedX * MAX_TILT;
+  });
+}
 
 // ------------------
-// GYROSCOOP SUPPORT
+// GYROSCOOP SUPPORT (alleen desktop, NIET mobiel)
 // ------------------
-if (window.DeviceOrientationEvent) {
-  // iOS 13+ vereist expliciete toestemming
+if (window.DeviceOrientationEvent && window.innerWidth > 768) {
   if (typeof DeviceOrientationEvent.requestPermission === 'function') {
     const btn = document.createElement('button');
     btn.textContent = 'Activeer 3D';
@@ -135,20 +137,17 @@ if (window.DeviceOrientationEvent) {
 
     btn.addEventListener('click', () => {
       DeviceOrientationEvent.requestPermission().then(response => {
-        if (response === 'granted') {
-          btn.remove();
-        }
+        if (response === 'granted') btn.remove();
       });
     });
   }
 
   window.addEventListener('deviceorientation', (e) => {
-    // gamma: links/rechts, beta: voor/achter
     const gamma = e.gamma || 0;
     const beta = e.beta || 0;
 
-    tiltX = (beta / 90) * MAX_TILT;
-    tiltY = -(gamma / 90) * MAX_TILT; // horizontaal correct
+    tiltX = (beta / 90) * (MAX_TILT / 2);
+    tiltY = -(gamma / 90) * (MAX_TILT / 2);
   });
 }
 
@@ -159,10 +158,10 @@ function animateTilt() {
   currentTiltX += (tiltX - currentTiltX) * TILT_SMOOTHNESS;
   currentTiltY += (tiltY - currentTiltY) * TILT_SMOOTHNESS;
 
-  // Subtiele idle drift
-  idleTime += 0.02;
-  const idleX = Math.sin(idleTime) * 1.5;
-  const idleY = Math.cos(idleTime / 1.5) * 1.5;
+  if (!isDragging) idleTime += 0.02;
+
+  const idleX = Math.sin(idleTime) * 1.2;
+  const idleY = Math.cos(idleTime / 1.5) * 1.2;
 
   cube.style.transform = `
     rotateX(${rotX + currentTiltX + idleX}deg)
@@ -237,14 +236,14 @@ function updateFaceTitle(face) {
   }
 }
 
-
-
 updateRotation();
 
-
+// ------------------
+// MENU BUTTON
+// ------------------
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 
 menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('hidden'); // toont of verbergt het menu
+  menu.classList.toggle('hidden');
 });
