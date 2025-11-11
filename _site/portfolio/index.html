@@ -16,6 +16,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Gothic+A1&display=swap" rel="stylesheet">
 
+  <!-- SEO -->
+<meta name="description" content="Studio Geert Verstijnen — creatief front-end developer en webdesigner. Ontwikkeling van moderne, minimalistische websites met oog voor detail, performance en design.">
+<meta name="keywords" content="Studio Geert Verstijnen, Geert Verstijnen, front-end developer, web developer, website designer, webdesign studio, creative developer, digital designer, UI designer, UX design, portfolio websites, interactive design, creative coding, TailwindCSS, JavaScript, HTML, CSS, 3D web, motion design, branding, minimal design, modern websites, web development Nederland, freelance developer, creative studio">
+<meta name="author" content="Studio Geert Verstijnen">
+<meta name="robots" content="index, follow">
+<meta name="language" content="nl">
+<meta property="og:title" content="Studio Geert Verstijnen — Front-End Developer & Web Designer">
+<meta property="og:description" content="Creatieve front-end developer gespecialiseerd in moderne, interactieve websites met een minimalistische stijl.">
+<meta property="og:image" content="/images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://studiogeertverstijnen.nl/">
+<meta name="twitter:card" content="summary_large_image">
+
   <!-- Animatie -->
   <style>
     @keyframes pulseGlow {
@@ -87,10 +100,10 @@
         
         <div class="grid grid-cols-2 grid-rows-2 w-12 h-12 cube-grid">
           
-          <img src="./images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
-          <img src="./images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
-          <img src="./images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
-          <img src="./images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
+          <img src="/images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
         </div>  
 
         <div class="flex flex-col">
@@ -112,19 +125,19 @@
   
       <!-- Navigatie -->
       <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 font-body">
-        <a href="/index.html" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-6 h-6 object-cover">
           <div class="text-rood">Home</div>
         </a>
-        <a href="/pages/Portfolio.html" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/portfolio/" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Groen/Groen Hoek.png" alt="" class="w-6 h-6 object-cover">
           <div class="text-groen">Portfolio</div>
         </a>       
-        <a href="/pages/Over mij.html" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/over-mij/" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-6 h-6 object-cover">
           <div class="text-geel">Over mij</div>
         </a>      
-        <a href="/pages/Contact.html" class="text-gray-700 hover:text-black flex gap-2">
+        <a href="/contact/" class="text-gray-700 hover:text-black flex gap-2">
           <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-6 h-6 object-cover">
           <div class="text-blauw">Contact</div>
         </a>
@@ -133,6 +146,13 @@
   </header>
 
   <!-- Content injectie -->
+  
+<div class="px-8 py-16">
+    <h1 class="text-4xl font-heading mb-8">Portfolio</h1>
+    <p class="font-body text-lg text-gray-700">
+      Hier komt binnenkort mijn werk te staan — creatieve webprojecten, interactief design en moderne webdevelopment cases.
+    </p>
+  </div>
   
 
   <footer class="w-full bg-gray-900 text-gray-100 py-6 mt-12">
@@ -160,5 +180,14 @@
   
 
   <script src="/scripts/index.js"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JN2QNFGMPG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JN2QNFGMPG');
+</script>
 </body>
 </html>
