@@ -1,89 +1,110 @@
-<header class="w-full">
-
+<header class="w-full bg-gray-100 shadow-sm z-50">
     <style>
-        /* * 1. ANIMATIE DEFINITIE
-         * De 'cubeRattle' is vervangen door een meer dynamische 3D-draaiing.
-         */
-        @keyframes cubeTwistFlip {
-          0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-          50%  { transform: rotate3d(1, 1, 0.5, 30deg) scale(1.05); } /* Pop-out & Draai */
-          100% { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-        }
-        
-        /* 2. BASIS 3D-INSTELLINGEN
-         * Belangrijk: Perspective op de oudercontainer en preserve-3d op de kubus.
-         */
-        .cube-wrapper {
-            /* Dit is de div met de classes 'group [perspective:800px]' */
-            perspective: 800px; 
-        }
-
-        .cube-grid {
-            /* Dit is de div met de classes 'grid grid-cols-2...' */
-            transform-style: preserve-3d;
-            transition: transform 0.6s ease-in-out;
-            /* Zorg dat de kubus niet verschuift als de muis erop komt */
-            transform: translateZ(0); 
-        }
-
-        /* 3. HOVER EFFECT
-         * Bij hover, voeren we een eenmalige, opvallende animatie uit.
-         */
-        .cube-wrapper:hover .cube-grid {
-            /* Gebruik de 'cubeTwistFlip' animatie op hover */
-            animation: cubeTwistFlip 0.6s ease-in-out 1;
-            /* Na de animatie eindigen we met een lichte, permanente draaiing
-               die blijft zolang je hovert, voor een 'ready-to-go' gevoel. */
-            transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
-        }
+      @keyframes cubeTwistFlip {
+        0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
+        50%  { transform: rotate3d(1, 1, 0.5, 30deg) scale(1.05); }
+        100% { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
+      }
+      .cube-wrapper { perspective: 800px; }
+      .cube-grid {
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-in-out;
+        transform: translateZ(0);
+      }
+      .cube-wrapper:hover .cube-grid {
+        animation: cubeTwistFlip 0.6s ease-in-out 1;
+        transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+      }
     </style>
-
-<div class="px-4 py-4 flex justify-between items-center">
-    <div class="flex items-center space-x-4 group cube-wrapper">
-        
-        <div class="grid grid-cols-2 grid-rows-2 w-12 h-12 cube-grid">
-          
-          <img src="/images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
-          <img src="/images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
-          <img src="/images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
-          <img src="/images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
-        </div>  
-
-        <div class="flex flex-col">
-          <h1 class="text-xl font-bold font-heading">Studio</h1>
-          <h2 class="text-sm font-body">Geert Verstijnen</h2>
-        </div>
+  
+    <!-- Bovenbalk -->
+    <div class="px-4 py-4 flex justify-between items-center max-w-7xl mx-auto">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3 group cube-wrapper">
+        <a href="/" class="flex items-center space-x-3">
+          <div class="grid grid-cols-2 grid-rows-2 w-10 h-10 cube-grid">
+            <img src="/images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
+            <img src="/images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
+            <img src="/images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
+            <img src="/images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <h1 class="text-lg font-bold font-heading leading-tight">Studio</h1>
+            <h2 class="text-xs font-body">Geert Verstijnen</h2>
+          </div>
+        </a>
       </div>
-
-
+  
+      <!-- Hamburger knop -->
       <button 
         id="menu-btn"
-        class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none"
+        class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none transition-transform"
         aria-label="Menu"
       >
-        <span class="block w-full h-0.5 bg-black"></span>
-        <span class="block w-full h-0.5 bg-black"></span>
-        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black transition-all"></span>
+        <span class="block w-full h-0.5 bg-black transition-all"></span>
+        <span class="block w-full h-0.5 bg-black transition-all"></span>
       </button>
   
-      <!-- Navigatie -->
-      <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-4 md:mt-0 font-body">
-        <a href="/" class="text-gray-700 hover:text-black flex gap-2">
-          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-6 h-6 object-cover">
-          <div class="text-rood">Home</div>
+      <!-- Navigatie desktop -->
+      <nav class="hidden md:flex font-body space-x-6">
+        <a href="/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-5 h-5">
+          <span>Home</span>
         </a>
-        <a href="/portfolio/" class="text-gray-700 hover:text-black flex gap-2">
-          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-6 h-6 object-cover">
-          <div class="text-groen">Portfolio</div>
-        </a>       
-        <a href="/over-mij/" class="text-gray-700 hover:text-black flex gap-2">
-          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-6 h-6 object-cover">
-          <div class="text-geel">Over mij</div>
-        </a>      
-        <a href="/contact/" class="text-gray-700 hover:text-black flex gap-2">
-          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-6 h-6 object-cover">
-          <div class="text-blauw">Contact</div>
+        <a href="/portfolio/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-5 h-5">
+          <span>Portfolio</span>
+        </a>
+        <a href="/over-mij/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-5 h-5">
+          <span>Over mij</span>
+        </a>
+        <a href="/contact/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-5 h-5">
+          <span>Contact</span>
         </a>
       </nav>
     </div>
+  
+    <!-- Mobiel menu -->
+    <nav 
+      id="mobile-menu" 
+      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden animate-slide-down"
+    >
+      <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
+      </a>
+      <a href="/portfolio/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> Portfolio
+      </a>
+      <a href="/over-mij/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> Over mij
+      </a>
+      <a href="/contact/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> Contact
+      </a>
+    </nav>
+
   </header>
+  
+  <script>
+    // Mobiel menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    const toggleMenu = () => {
+      const isOpen = mobileMenu.classList.contains('flex');
+      if (isOpen) {
+        mobileMenu.classList.remove('flex');
+        mobileMenu.classList.add('hidden');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+      }
+    };
+  
+    // Event listener toevoegen
+    menuBtn.addEventListener('click', toggleMenu);
+  </script>
+  

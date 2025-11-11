@@ -180,22 +180,16 @@ faces.forEach(face => {
     if (moved) return;
     switch (true) {
       case face.classList.contains('front'):
-        window.location.href = './pages/wiebenik.html';
+        window.location.href = '/';
         break;
       case face.classList.contains('back'):
-        window.location.href = './pages/projecten.html';
+        window.location.href = '/over-mij/';
         break;
       case face.classList.contains('left'):
-        window.location.href = './pages/mijnidee.html';
+        window.location.href = '/contact/';
         break;
       case face.classList.contains('right'):
-        window.location.href = './pages/linkjes.html';
-        break;
-      case face.classList.contains('top'):
-        window.location.href = './pages/about.html';
-        break;
-      case face.classList.contains('bottom'):
-        window.location.href = './pages/contact.html';
+        window.location.href = '/portfolio/';
         break;
     }
   });
@@ -238,12 +232,3 @@ function updateFaceTitle(face) {
 
 updateRotation();
 
-// ------------------
-// MENU BUTTON
-// ------------------
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
-
-menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-});

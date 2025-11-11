@@ -1,23 +1,53 @@
-<footer class="w-full bg-gray-900 text-gray-100 py-6 mt-12">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      
-      <!-- Links -->
-      <div class="flex flex-col md:flex-row gap-6 text-center md:text-left">
-        <a href="./pages/about.html" class="hover:text-blue-400 transition-colors">Over mij</a>
-        <a href="./pages/portfolio.html" class="hover:text-green-400 transition-colors">Portfolio</a>
-        <a href="./pages/contact.html" class="hover:text-red-400 transition-colors">Contact</a>
-      </div>
+<footer class="w-full bg-gray-900 text-gray-100 py-12 mt-20 relative overflow-hidden">
+    <!-- Subtiele gekleurde gloed op achtergrond -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen blur-3xl"></div>
+      <div class="absolute top-1/2 left-0 w-64 h-64 bg-red-500 rounded-full mix-blend-screen blur-3xl"></div>
+    </div>
   
-      <!-- Copy + Social -->
-      <div class="mt-4 md:mt-0 text-center md:text-right flex flex-col gap-2">
-        <p class="text-sm">&copy; 2025 Geert Verstijnen. Alle rechten voorbehouden.</p>
-        <div class="flex justify-center md:justify-end gap-4">
-          <a href="https://github.com/" target="_blank" class="hover:text-gray-300 transition-colors">GitHub</a>
-          <a href="https://linkedin.com/" target="_blank" class="hover:text-gray-300 transition-colors">LinkedIn</a>
-          <a href="https://twitter.com/" target="_blank" class="hover:text-gray-300 transition-colors">Twitter</a>
+    <!-- Inhoud -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+  
+      <!-- Logo + naam -->
+      <div class="flex items-center space-x-4 group">
+        <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="text-xl font-heading font-bold tracking-tight">Studio</h1>
+          <h2 class="text-sm font-body text-gray-400">Geert Verstijnen</h2>
         </div>
       </div>
   
+      <!-- Navigatie -->
+      <nav class="font-body flex flex-col md:flex-row gap-3 md:gap-6 text-gray-300">
+        <a href="/" class="hover:text-white transition">Home</a>
+        <a href="/portfolio/" class="hover:text-white transition">Portfolio</a>
+        <a href="/over-mij/" class="hover:text-white transition">Over mij</a>
+        <a href="/contact/" class="hover:text-white transition">Contact</a>
+      </nav>
+  
+      <!-- Socials -->
+      <div class="flex flex-col md:items-end gap-4 font-body">
+        <h3 class="font-heading text-sm uppercase tracking-wide text-gray-400">Volg Studio Geert Verstijnen</h3>
+        <div class="flex gap-4">
+          <a href="https://github.com/KoningGeert" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="/images/icons/github-mark.svg" alt="GitHub" class="w-6 h-6 font-white">
+          </a>
+          <a href="https://www.linkedin.com/in/geert-verstijnen-a3691320b/" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="/images/icons/InBug-Black.png" alt="LinkedIn" class="w-6 h-6 font-white">
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
+      <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
     </div>
   </footer>
   
