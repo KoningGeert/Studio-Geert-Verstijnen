@@ -2,9 +2,13 @@
 layout: layouts/base.html
 title: Studio Geert Verstijnen - Interactieve Rubik's Cube
 ---
-<div class="relative bg-gray-200 flex justify-center items-center h-screen"  
-     style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+<!-- Reset voor body -->
+<body class="m-0 p-0 bg-gray-200">
 
+<!-- Rubik's Cube Hero -->
+<div class="relative flex justify-center items-center min-h-screen"
+     style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+  
   <!-- Titel -->
   <div id="face-title" class="absolute top-0 w-full font-heading text-center text-[8vw] font-extrabold text-gray-900 pointer-events-none">
     Wie ben ik
@@ -12,3 +16,75 @@ title: Studio Geert Verstijnen - Interactieve Rubik's Cube
 
   {% include "cube.html" %}
 </div>
+
+<!-- Parallax Hero -->
+<div class="relative w-full h-60 overflow-hidden">
+  <div
+    class="parallax-bg absolute top-0 left-0 w-full h-[150%] bg-center bg-cover"
+    style="background-image: url('/images/Banner.svg'); will-change: transform;"
+  ></div>
+</div>
+
+<!-- Contact Sectie -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
+      
+      <!-- Afbeelding -->
+      <div class="w-full md:w-1/2">
+        <img
+          class="rounded-xl shadow-lg object-cover w-full h-full"
+          src="https://i.sstatic.net/y9DpT.jpg"
+          alt="Contact"
+        />
+      </div>
+
+      <!-- Contactinformatie -->
+      <div class="w-full md:w-1/2 flex flex-col gap-4">
+        <h2 class="text-3xl font-bold text-gray-800">Neem contact op</h2>
+        <p class="text-gray-600 text-lg">
+          Ik help je graag met je vragen of projecten. Stuur gerust een bericht!
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <span class="font-semibold">Naam:</span>
+            <span>Geert Verstijnen</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-semibold">Rol:</span>
+            <span>Webdesigner</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-semibold">E-mail:</span>
+            <a href="mailto:contact@example.com" class="text-blue-600 hover:underline">
+              contact@example.com
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-semibold">Telefoon:</span>
+            <a href="tel:+31611266275" class="text-blue-600 hover:underline">
+              +31 6 11266275
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="mt-6 inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition-colors"
+        >
+          Stuur een bericht
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const parallax = document.querySelector('.parallax-bg');
+
+  window.addEventListener('scroll', () => {
+    const offset = window.pageYOffset;
+    if(parallax) parallax.style.transform = `translateY(${offset * -0.1}px)`;
+  });
+</script>
