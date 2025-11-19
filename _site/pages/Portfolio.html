@@ -3,15 +3,330 @@ layout: layouts/base.html
 title: Portfolio
 permalink: "portfolio/index.html"
 ---
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+  
+  * {
+    font-family: 'Inter', sans-serif;
+  }
 
-<div class="container mx-auto">
-  <div class="relative flex justify-center items-center min-h-screen"
-  style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+  .font-heading {
+    font-weight: 900;
+  }
 
-<!-- Titel -->
-<div id="face-title" class="absolute top-0 w-full font-heading text-center text-[8vw] font-extrabold text-gray-900 pointer-events-none">
- Wie ben ik
-</div>
+  body {
+    background: white;
+  }
 
-{% include "cube.html" %}
-</div></div>
+  .floating-gradient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: float 25s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -50px) scale(1.1); }
+    50% { transform: translate(-30px, 40px) scale(0.95); }
+    75% { transform: translate(30px, 30px) scale(1.05); }
+  }
+
+  .gradient-blauw { background: var(--blauw); animation-delay: 0s; }
+  .gradient-geel { background: var(--geel); animation-delay: 7s; }
+  .gradient-groen { background: var(--groen); animation-delay: 14s; }
+  .gradient-rood { background: var(--rood); animation-delay: 21s; }
+
+  .text-gradient-blauw-groen {
+    background: linear-gradient(135deg, var(--blauw), var(--groen));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(12, 137, 255, 0.9), rgba(47, 115, 57, 0.9));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .project-image {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.1);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal:nth-child(1) { animation-delay: 0.1s; }
+  .reveal:nth-child(2) { animation-delay: 0.2s; }
+  .reveal:nth-child(3) { animation-delay: 0.3s; }
+  .reveal:nth-child(4) { animation-delay: 0.4s; }
+  .reveal:nth-child(5) { animation-delay: 0.5s; }
+  .reveal:nth-child(6) { animation-delay: 0.6s; }
+
+  .filter-btn {
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(135deg, var(--blauw), var(--groen));
+    color: white;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden py-20">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="floating-gradient gradient-blauw w-96 h-96 absolute top-10 -left-20"></div>
+    <div class="floating-gradient gradient-geel w-80 h-80 absolute top-1/3 right-0"></div>
+    <div class="floating-gradient gradient-groen w-72 h-72 absolute bottom-20 left-1/3"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <div class="inline-block mb-6">
+      <span class="px-4 py-2 bg-blue-500/10 text-blue-600 rounded-full text-sm font-semibold border-2 border-blue-500/30">
+        🎨 Mijn Werk
+      </span>
+    </div>
+    
+    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight font-heading">
+      Recente <span class="text-gradient-blauw-groen">Projecten</span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+      Een selectie van projecten waar ik trots op ben. Van interactieve websites tot branding projecten.
+    </p>
+  </div>
+</section>
+
+<!-- Filter Section -->
+<section class="py-8 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-wrap gap-4 justify-center">
+      <button class="filter-btn active px-6 py-3 bg-white border-2 border-blue-500 text-blue-600 rounded-full font-semibold" data-filter="all">
+        Alles
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-blue-500 text-blue-600 rounded-full font-semibold" data-filter="webdesign">
+        Webdesign
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-green-700 text-green-700 rounded-full font-semibold" data-filter="interactive">
+        Branding
+      </button>
+      <button class="filter-btn px-6 py-3 bg-white border-2 border-yellow-500 text-yellow-600 rounded-full font-semibold" data-filter="branding">
+        Concepting
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="py-24 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="projectGrid">
+      
+      <!-- Project 1 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="interactive webdesign">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="/images/UnMundoMejor/UnMundoMejor-LandingPage.gif" 
+               alt="Un Mundo Mejor" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">Un Mundo Mejor</h3>
+          <p class="text-white/90 mb-6 text-sm">Interactieve website met 3D animaties voor vrijwilligersorganisatie</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">UX Design</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Eleventy</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">TailwindCSS</span>
+          </div>
+          <a href="/portfolio/un-mundo-mejor" class="inline-block px-6 py-3 bg-white text-blauw font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="webdesign">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="/images/StarryNight/StarryNightPaal.png" 
+               alt="TechStart Dashboard" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">Starry Night Poster</h3>
+          <p class="text-white/90 mb-6 text-sm">Afstudeer opdracht voor semester grafisch design</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshop</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Concepting</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Design</span>
+          </div>
+          <a href="/project-techstart" class="inline-block px-6 py-3 bg-white text-blauw font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="branding webdesign">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="/images/HetVerhaalVanJeLeven/Hoofdpage.png" 
+               alt="Green Beans Café" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Verhaal Van Je Leven</h3>
+          <p class="text-white/90 mb-6 text-sm">Complete branding & website voor het verhaal van je leven</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Tailwind</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Branding</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Responsive</span>
+          </div>
+          <a href="/project-greenbeans" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="interactive">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="/images/HetNieuweFamilieopstellen/Hoofdpage.png" 
+               alt="3D Portfolio Experience" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Nieuwe Familieopstellen</h3>
+          <p class="text-white/90 mb-6 text-sm">Immersive 3D portfolio voor creative agency</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Three.js</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">GSAP</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">WebGL</span>
+          </div>
+          <a href="/project-3dportfolio" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="webdesign">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=800&h=600&fit=crop" 
+               alt="FitLife App Landing" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">FitLife App Landing</h3>
+          <p class="text-white/90 mb-6 text-sm">High-converting landingspagina voor fitness app</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Next.js</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Framer Motion</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">CRO</span>
+          </div>
+          <a href="/project-fitlife" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card reveal bg-white shadow-xl" data-category="branding interactive">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop" 
+               alt="Innovate Summit 2024" 
+               class="project-image w-full h-full object-cover">
+        </div>
+        <div class="project-overlay">
+          <h3 class="text-3xl font-black text-white mb-3 font-heading">Innovate Summit 2024</h3>
+          <p class="text-white/90 mb-6 text-sm">Interactieve event website met live features</p>
+          <div class="flex gap-2 mb-6 flex-wrap justify-center">
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Vue.js</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Socket.io</span>
+            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Real-time</span>
+          </div>
+          <a href="/project-summit" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+            Bekijk Project →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-gradient-to-br from-blue-500/5 via-green-700/5 to-yellow-500/5 relative overflow-hidden">
+  <div class="floating-gradient gradient-blauw w-96 h-96 absolute -top-20 -left-40 opacity-10"></div>
+  <div class="floating-gradient gradient-groen w-80 h-80 absolute -bottom-20 -right-40 opacity-10"></div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl md:text-6xl font-black mb-6 font-heading">
+        Zullen we <span class="text-gradient-blauw-groen">samenwerken?</span>
+      </h2>
+      <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+        Klaar om jouw project naar het next level te tillen? Laten we samen iets moois maken.
+      </p>
+      <a href="/#contact" class="inline-block px-10 py-5 bg-gradient-to-r from-blue-600 to-green-700 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        Start je project →
+      </a>
+    </div>
+  </div>
+</section>
