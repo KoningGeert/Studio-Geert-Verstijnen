@@ -55,7 +55,7 @@
 </head>
 <body class="">
 
-  <header class="w-full  shadow-sm z-50">
+  <header class="w-full z-50">
     <style>
       @keyframes cubeTwistFlip {
         0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
@@ -75,7 +75,7 @@
     </style>
   
     <!-- Bovenbalk -->
-    <div class="px-4 py-4 flex justify-between items-center max-w-7xl mx-auto">
+    <div class="py-4 flex justify-between items-center container mx-auto">
       <!-- Logo -->
       <div class="flex items-center space-x-3 group cube-wrapper">
         <a href="/" class="flex items-center space-x-3">
@@ -168,13 +168,76 @@
 
   <!-- Content injectie -->
   
-<div class="px-8 py-16">
-    <h1 class="text-4xl font-heading mb-8">Portfolio</h1>
-    <p class="font-body text-lg text-gray-700">
-      Hier komt binnenkort mijn werk te staan — creatieve webprojecten, interactief design en moderne webdevelopment cases.
-    </p>
+<div class="container mx-auto">
+  <div class="relative flex justify-center items-center min-h-screen"
+  style="--cube-blue:#0C89FF; --cube-yellow:#FFC90F; --cube-red:#FD3F03; --cube-green:#2F7339;">
+
+<!-- Titel -->
+<div id="face-title" class="absolute top-0 w-full font-heading text-center text-[8vw] font-extrabold text-gray-900 pointer-events-none">
+ Wie ben ik
+</div>
+
+ <!-- Rubik's Cube Container -->
+  <div class="rubiks-cube-container shadow-xl animate-[pulseGlow_6s_ease-in-out_infinite_alternate]">
+   
+
+    
+    <div id="cube" class="rubiks-cube relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] transition-transform duration-700 ease-out transform-style-preserve-3d">
+
+      <!-- FRONT -->
+      <div class="face front grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Rood/Rood Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
+      <!-- BACK -->
+      <div class="face back grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Geel/Geel Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Geel/Geel Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Geel/Geel ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
+      <!-- LEFT -->
+      <div class="face left grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Blauw/Blauw ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="face right grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Groen/Groen Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Rood Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+
+      </div>
+
+      <!-- TOP -->
+      <div class="face top grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="face bottom grid grid-cols-2 grid-rows-2 bg-gray-800">
+        <div><img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover"></div>
+        <div><img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover"></div>
+      </div>
+
+    </div>
   </div>
-  
+
+
+</div></div>
 
   <footer class="w-full bg-gray-900 text-gray-100 py-12 mt-20 relative overflow-hidden">
     <!-- Subtiele gekleurde gloed op achtergrond -->
@@ -185,7 +248,7 @@
     </div>
   
     <!-- Inhoud -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+    <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
   
       <!-- Logo + naam -->
       <div class="flex items-center space-x-4 group">
