@@ -9,6 +9,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="/styles/input.css">
   <link rel="stylesheet" href="/styles/styles.css">
 
   <!-- Google Fonts -->
@@ -51,6 +52,19 @@
                 drop-shadow(0 0 60px var(--cube-yellow));
       }
     }
+
+    .bg-blauw { background-color: #0c89ff; }
+        .bg-geel { background-color: #ffc90f; }
+        .bg-groen { background-color: #2f7339; }
+        .bg-rood { background-color: #fd3f03; }
+        .text-blauw { color: #0c89ff; }
+        .text-geel { color: #ffc90f; }
+        .text-groen { color: #2f7339; }
+        .text-rood { color: #fd3f03; }
+        .border-blauw { border-color: #0c89ff; }
+        .border-geel { border-color: #ffc90f; }
+        .border-groen { border-color: #2f7339; }
+        .border-rood { border-color: #fd3f03; }
   </style>
 </head>
 <body class="font-body">
@@ -168,7 +182,162 @@
 
   <!-- Content injectie -->
   
-<div>Kaasje</div>
+  <!-- Hero Section met Floating Gradients -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <!-- Floating gradient shapes -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="floating-gradient gradient-blauw w-96 h-96 absolute top-10 -left-20"></div>
+        <div class="floating-gradient gradient-geel w-80 h-80 absolute top-1/3 right-0"></div>
+        <div class="floating-gradient gradient-groen w-72 h-72 absolute bottom-20 left-1/3"></div>
+        <div class="floating-gradient gradient-rood w-64 h-64 absolute top-2/3 -right-10"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center reveal active">
+            <!-- Badge -->
+            <div class="inline-block mb-6">
+                <span class="px-4 py-2 bg-blauw/10 text-blauw rounded-full text-sm font-semibold border-2 border-blauw/30">
+                    👋 Over Mij
+                </span>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="w-40 h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-green-600 flex items-center justify-center text-7xl border-4 border-white shadow-2xl">
+                👤
+            </div>
+
+            <!-- Heading -->
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                Jouw <span class="text-gradient-blauw-groen">Naam</span>
+            </h1>
+
+            <!-- Role -->
+            <p class="text-2xl md:text-3xl text-gray-600 mb-10 font-bold">
+                Full-stack Developer & Designer
+            </p>
+
+            <!-- Bio -->
+            <p class="text-xl md:text-2xl text-gray-600 mb-6 max-w-3xl mx-auto leading-relaxed">
+                Gepassioneerd over het bouwen van mooie, functionele webapplicaties 
+                die echt impact maken. Met een liefde voor clean code en pixel-perfect design.
+            </p>
+
+            <p class="text-lg md:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
+                Wanneer ik niet aan het programmeren ben, vind je me aan het leren van 
+                nieuwe technologieën of werken aan persoonlijke projecten die de grenzen verleggen.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#" class="inline-block px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    📄 Download CV
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="inline-block px-10 py-5 bg-white border-2 border-gray-200 text-gray-800 font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    💼 LinkedIn Profiel
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-5xl md:text-6xl font-black mb-4">
+                Mijn <span class="text-gradient-blauw-groen">Skills</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                De tools en technologieën waar ik mee werk
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Skill Card 1 -->
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl reveal border-2 border-gray-100">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    ⚡
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">Frontend Development</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    React, Next.js, TypeScript, TailwindCSS en moderne JavaScript frameworks.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">React</span>
+                    <span class="text-xs px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">TypeScript</span>
+                </div>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl reveal border-2 border-gray-100" style="transition-delay: 0.1s">
+                <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    🎨
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">UI/UX Design</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Figma, Adobe XD en het creëren van intuïtieve gebruikerservaringen.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full font-medium">Figma</span>
+                    <span class="text-xs px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full font-medium">Design Systems</span>
+                </div>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl reveal border-2 border-gray-100" style="transition-delay: 0.2s">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-400 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    🚀
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900">Backend & Tools</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Node.js, Python, databases en deployment pipelines.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium">Node.js</span>
+                    <span class="text-xs px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-gradient-to-br from-blue-50 via-green-50 to-yellow-50 relative overflow-hidden">
+    <div class="floating-gradient gradient-blauw w-96 h-96 absolute -top-20 -left-40 opacity-10"></div>
+    <div class="floating-gradient gradient-groen w-80 h-80 absolute -bottom-20 -right-40 opacity-10"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-5xl md:text-6xl font-black mb-6">
+                Laten we <span class="text-gradient-blauw-groen">samenwerken</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                Heb je een project in gedachten? Neem contact op en laten we er iets moois van maken.
+            </p>
+
+            <div class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-gray-100 max-w-2xl mx-auto">
+                <div class="space-y-4 mb-8">
+                    <div class="p-4 bg-gray-50 rounded-xl text-left">
+                        <p class="text-sm font-semibold text-gray-500 mb-1">EMAIL</p>
+                        <a href="mailto:jouw@email.nl" class="text-lg font-bold text-blue-600 hover:text-green-600 transition-colors">
+                            jouw@email.nl
+                        </a>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl text-left">
+                        <p class="text-sm font-semibold text-gray-500 mb-1">TELEFOON</p>
+                        <a href="tel:+31612345678" class="text-lg font-bold text-blue-600 hover:text-green-600 transition-colors">
+                            +31 6 12345678
+                        </a>
+                    </div>
+                </div>
+
+                <a href="mailto:jouw@email.nl" class="inline-block px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Stuur een bericht →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
   <footer class="w-full bg-gray-900 text-gray-100 py-12 mt-20 relative overflow-hidden">
     <!-- Subtiele gekleurde gloed op achtergrond -->

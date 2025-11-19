@@ -146,3 +146,18 @@
     box-shadow: 0 0 0 20px rgba(59, 130, 246, 0);
   }
 }
+
+  
+        /* Tailwind custom colors */
+        .bg-blauw { background-color: #0c89ff; }
+        .bg-geel { background-color: #ffc90f; }
+        .bg-groen { background-color: #2f7339; }
+        .bg-rood { background-color: #fd3f03; }
+        .text-blauw { color: #0c89ff; }
+        .text-geel { color: #ffc90f; }
+        .text-groen { color: #2f7339; }
+        .text-rood { color: #fd3f03; }
+        .border-blauw { border-color: #0c89ff; }
+        .border-geel { border-color: #ffc90f; }
+        .border-groen { border-color: #2f7339; }
+        .border-rood { border-color: #fd3f03; }
