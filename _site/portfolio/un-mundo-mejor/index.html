@@ -65,28 +65,18 @@
         .border-geel { border-color: #ffc90f; }
         .border-groen { border-color: #2f7339; }
         .border-rood { border-color: #fd3f03; }
+        .text-gradient-blauw-groen {
+  background: linear-gradient(135deg, #0c89ff, #2f7339);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
   </style>
 </head>
 <body class="font-body">
 
   <header class="w-full z-50">
-    <style>
-      @keyframes cubeTwistFlip {
-        0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-        50%  { transform: rotate3d(1, 1, 0.5, 30deg) scale(1.05); }
-        100% { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-      }
-      .cube-wrapper { perspective: 800px; }
-      .cube-grid {
-        transform-style: preserve-3d;
-        transition: transform 0.6s ease-in-out;
-        transform: translateZ(0);
-      }
-      .cube-wrapper:hover .cube-grid {
-        animation: cubeTwistFlip 0.6s ease-in-out 1;
-        transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
-      }
-    </style>
+   
   
     <!-- Bovenbalk -->
     <div class="py-4 flex justify-between items-center container mx-auto">
@@ -354,13 +344,32 @@
 
   <!-- Back Button -->
   <div class="container mx-auto px-6 pt-8">
-    <a href="/portfolio" class="back-button inline-flex items-center text-lg font-bold text-blue-600 hover:text-green-700 transition-colors">
+    <a href="/portfolio" class="back-button inline-flex items-center text-lg font-bold text-blauw hover:text-groen transition-colors">
       <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
       Terug naar portfolio
     </a>
   </div>
+
+  <!-- <section class="py-8">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal flex flex-wrap gap-3 justify-center">
+          <span class="floating-badge tech-badge px-5 py-2 bg-blue-600/10 text-blue-600 rounded-full text-sm font-semibold border-2 border-blue-600/30">
+            UX Design
+          </span>
+          <span class="floating-badge tech-badge px-5 py-2 bg-yellow-500/10 text-yellow-600 rounded-full text-sm font-semibold border-2 border-yellow-500/30" style="animation-delay: 0.2s;">
+            TailwindCSS
+          </span>
+          <span class="floating-badge tech-badge px-5 py-2 bg-red-600/10 text-red-600 rounded-full text-sm font-semibold border-2 border-red-600/30" style="animation-delay: 0.4s;">
+            Eleventy
+          </span>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
 
   <!-- Hero Image Section - FIRST! -->
   <section class="py-12">
@@ -377,26 +386,7 @@
   </section>
 
   <!-- Quick Info Bar -->
-  <section class="py-8">
-    <div class="container mx-auto px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal flex flex-wrap gap-3 justify-center">
-          <span class="floating-badge tech-badge px-5 py-2 bg-blue-600/10 text-blue-600 rounded-full text-sm font-semibold border-2 border-blue-600/30">
-            Three.js
-          </span>
-          <span class="floating-badge tech-badge px-5 py-2 bg-yellow-500/10 text-yellow-600 rounded-full text-sm font-semibold border-2 border-yellow-500/30" style="animation-delay: 0.2s;">
-            TailwindCSS
-          </span>
-          <span class="floating-badge tech-badge px-5 py-2 bg-green-700/10 text-green-700 rounded-full text-sm font-semibold border-2 border-green-700/30" style="animation-delay: 0.4s;">
-            Eleventy
-          </span>
-          <span class="floating-badge tech-badge px-5 py-2 bg-red-600/10 text-red-600 rounded-full text-sm font-semibold border-2 border-red-600/30" style="animation-delay: 0.6s;">
-            GSAP
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- Title & Description -->
   <section class="py-16">
@@ -415,6 +405,15 @@
         <p class="reveal text-xl md:text-2xl text-gray-600 mb-8">
           Een moderne, interactieve website voor een vrijwilligersorganisatie die zich inzet voor een betere wereld. Met 3D animaties en een frisse uitstraling om bezoekers te inspireren en activeren.
         </p>
+
+        <div class="reveal">
+            <a href="https://unmundomejor.nl" target="_blank"
+               class="inline-block mt-2 px-8 py-3 bg-blauw text-white font-semibold rounded-full shadow-lg hover:bg-groen transition-colors">
+              🔗 Bekijk de website
+            </a>
+          </div>
+          
+
       </div>
     </div>
   </section>
@@ -468,12 +467,12 @@
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
         <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
-          <div class="text-4xl font-black text-blue-600 mb-2 font-heading">8</div>
-          <div class="text-sm text-gray-600 font-semibold">Weken ontwikkeling</div>
+          <div class="text-4xl font-black text-blue-600 mb-2 font-heading">14</div>
+          <div class="text-sm text-gray-600 font-semibold">Unieke UI componenten</div>
         </div>
         <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
-          <div class="text-4xl font-black text-green-700 mb-2 font-heading">15+</div>
-          <div class="text-sm text-gray-600 font-semibold">Interactieve elementen</div>
+          <div class="text-4xl font-black text-green-700 mb-2 font-heading">3</div>
+          <div class="text-sm text-gray-600 font-semibold">Beschikbare talen</div>
         </div>
         <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
           <div class="text-4xl font-black text-yellow-600 mb-2 font-heading">100%</div>
@@ -498,29 +497,28 @@
               De <span class="text-gradient-blauw-groen">Uitdaging</span>
             </h2>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Un Mundo Mejor wilde hun online aanwezigheid vernieuwen met een website die niet alleen informeert, maar ook inspireert en aanzet tot actie. De uitdaging was om een technisch geavanceerde website te bouwen die toegankelijk blijft voor alle bezoekers.
+              Un Mundo Mejor had behoefte aan een moderne website waar bezoekers alle essentiële informatie over de stichting eenvoudig kunnen vinden. Maar er was nog een extra uitdaging: de site moest beschikbaar zijn voor een internationaal publiek. Dat betekende dat elke tekst op een slimme, schaalbare manier vertaald moest kunnen worden zonder dat dit invloed had op de structuur of performance van de website.
             </p>
             <p class="text-gray-600 leading-relaxed">
-              Het project vereiste een balans tussen visuele impact, gebruiksvriendelijkheid en snelle laadtijden - essentieel voor een organisatie die mensen wereldwijd wil bereiken.
+              Om dit te realiseren, was een flexibele content-architectuur nodig die zowel gebruiksvriendelijkheid als meertaligheid ondersteunt. De opdracht draaide dus niet alleen om design en techniek, maar ook om het creëren van een solide basis voor groei en wereldwijde toegankelijkheid.
             </p>
           </div>
-
           <!-- Solution -->
           <div>
             <h2 class="text-3xl md:text-4xl font-black mb-6 font-heading">
               De <span class="text-gradient-blauw-groen">Oplossing</span>
             </h2>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Door gebruik te maken van Three.js hebben we een interactieve 3D globe gemaakt die de wereldwijde impact van de organisatie visualiseert. De website is gebouwd met Eleventy voor optimale performance en TailwindCSS voor een modern, consistent design.
+              Door de website te bouwen met Eleventy en TailwindCSS ontstond een razendsnelle en onderhoudbare basis. Om de meertaligheid soepel te integreren, heb ik een op JSON gebaseerde vertaalstructuur opgezet die alle teksten centraal beheert. Hierdoor kan de inhoud eenvoudig worden uitgebreid met nieuwe talen, zonder dat er extra code hoeft te worden herschreven.
             </p>
             <p class="text-gray-600 leading-relaxed">
-              Elke animatie is geoptimaliseerd, elk element is toegankelijk, en de gehele ervaring is ontworpen om bezoekers te betrekken en te motiveren om deel te nemen aan het goede doel.
+              Dankzij deze aanpak blijft de website overzichtelijk, performant en toegankelijk voor gebruikers wereldwijd. Elke taalversie biedt dezelfde sterke ervaring, en de technische opzet maakt het mogelijk om de boodschap van Un Mundo Mejor nog verder over de wereld te verspreiden.
             </p>
           </div>
         </div>
 
         <!-- Features List -->
-        <div class="bg-white rounded-3xl p-10 shadow-xl mb-16">
+        <!-- <div class="bg-white rounded-3xl p-10 shadow-xl mb-16">
           <h3 class="text-2xl font-black mb-8 font-heading">Key Features</h3>
           <div class="grid md:grid-cols-2 gap-6">
             <div class="flex gap-4">
@@ -560,7 +558,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -595,14 +593,13 @@
     </div>
   </section> -->
 
-  <div class="relative w-full h-60 overflow-hidden">
-
-  <div
-    class="parallax-bg absolute top-0 left-0 w-full h-[150%] bg-center bg-cover"
-    style="background-image: url('/images/Banner.svg'); will-change: transform;"
-  ></div>
-</div>
-
+  <div class="relative w-full overflow-hidden">
+    <img
+      src="/images/icon Row 13.svg"
+      alt=""
+      class="w-full h-auto"
+    />
+  </div>
   <!-- Next Project -->
   <section class="py-24 bg-gray-50">
     <div class="container mx-auto px-6">
@@ -614,7 +611,7 @@
           <div class="relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl">
             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" 
                  alt="TechStart Dashboard" 
-                 class="w-full h-auto transition-transform duration-500 group-hover:scale-110">
+                 class="w-full h-auto">
             <div class="absolute inset-0 bg-gradient-to-t from-blue-600/90 to-transparent flex items-end p-10">
               <div class="text-left">
                 <h3 class="text-4xl font-black text-white mb-2 font-heading">TechStart Dashboard</h3>
@@ -657,8 +654,7 @@
       }
     });
   </script>
-</body>
-</html>
+
 
   <footer class="w-full bg-gray-900 text-gray-100 py-12 mt-20 relative overflow-hidden">
     <!-- Subtiele gekleurde gloed op achtergrond -->

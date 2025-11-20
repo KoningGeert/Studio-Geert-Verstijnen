@@ -10,12 +10,10 @@ permalink: "portfolio/index.html"
     font-family: 'Inter', sans-serif;
   }
 
+
+
   .font-heading {
     font-weight: 900;
-  }
-
-  body {
-    background: white;
   }
 
   .floating-gradient {
@@ -33,17 +31,6 @@ permalink: "portfolio/index.html"
     75% { transform: translate(30px, 30px) scale(1.05); }
   }
 
-  .gradient-blauw { background: var(--blauw); animation-delay: 0s; }
-  .gradient-geel { background: var(--geel); animation-delay: 7s; }
-  .gradient-groen { background: var(--groen); animation-delay: 14s; }
-  .gradient-rood { background: var(--rood); animation-delay: 21s; }
-
-  .text-gradient-blauw-groen {
-    background: linear-gradient(135deg, var(--blauw), var(--groen));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
 
   .project-card {
     position: relative;
@@ -129,8 +116,7 @@ permalink: "portfolio/index.html"
     transform: scale(1.05);
   }
 </style>
-</head>
-<body>
+
 <!-- Hero Section -->
 <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden py-20">
   <div class="absolute inset-0 pointer-events-none">
@@ -253,7 +239,7 @@ permalink: "portfolio/index.html"
         </div>
         <div class="project-overlay">
           <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Nieuwe Familieopstellen</h3>
-          <p class="text-white/90 mb-6 text-sm">Immersive 3D portfolio voor creative agency</p>
+          <p class="text-white/90 mb-6 text-sm">Een custom wordpress website voor het Nieuwe Familieopstellen</p>
           <div class="flex gap-2 mb-6 flex-wrap justify-center">
             <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Wordpress</span>
             <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">GSAP</span>
@@ -274,7 +260,7 @@ permalink: "portfolio/index.html"
         </div>
         <div class="project-overlay">
           <h3 class="text-3xl font-black text-white mb-3 font-heading">Studio Geert Verstijnen</h3>
-          <p class="text-white/90 mb-6 text-sm">High-converting landingspagina voor fitness app</p>
+          <p class="text-white/90 mb-6 text-sm">De branding van mijn eigen bedrijf Studio Geert Verstijnen</p>
           <div class="flex gap-2 mb-6 flex-wrap justify-center">
             <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Illustrator</span>
             <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshopn</span>
@@ -324,9 +310,12 @@ permalink: "portfolio/index.html"
       <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
         Klaar om jouw project naar het next level te tillen? Laten we samen iets moois maken.
       </p>
-      <a href="/#contact" class="inline-block px-10 py-5 bg-gradient-to-r from-blue-600 to-green-700 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
-        Start je project →
-      </a>
+      <a href="/#contact"
+      class="inline-block px-10 py-5 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+      style="background: linear-gradient(to right, #0C89FF, #2F7339);">
+     Start je project →
+   </a>
+   
     </div>
   </div>
 </section>

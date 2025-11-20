@@ -65,28 +65,18 @@
         .border-geel { border-color: #ffc90f; }
         .border-groen { border-color: #2f7339; }
         .border-rood { border-color: #fd3f03; }
+        .text-gradient-blauw-groen {
+  background: linear-gradient(135deg, #0c89ff, #2f7339);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
   </style>
 </head>
 <body class="font-body">
 
   <header class="w-full z-50">
-    <style>
-      @keyframes cubeTwistFlip {
-        0%   { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-        50%  { transform: rotate3d(1, 1, 0.5, 30deg) scale(1.05); }
-        100% { transform: rotate3d(0, 0, 0, 0deg) scale(1); }
-      }
-      .cube-wrapper { perspective: 800px; }
-      .cube-grid {
-        transform-style: preserve-3d;
-        transition: transform 0.6s ease-in-out;
-        transform: translateZ(0);
-      }
-      .cube-wrapper:hover .cube-grid {
-        animation: cubeTwistFlip 0.6s ease-in-out 1;
-        transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
-      }
-    </style>
+   
   
     <!-- Bovenbalk -->
     <div class="py-4 flex justify-between items-center container mx-auto">
@@ -353,7 +343,7 @@
                             <!-- Submit Button -->
                             <button 
                                 type="submit"
-                                class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                                class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"  style="background: linear-gradient(to right, #0C89FF, #2F7339);"
                             >
                                 Verstuur Bericht 🚀
                             </button>
@@ -400,7 +390,7 @@
                 </div>
 
                 <div class="text-center reveal" style="transition-delay: 0.2s">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4" >
                         🎯
                     </div>
                     <h3 class="text-xl font-bold mb-2">Maatwerk Advies</h3>
