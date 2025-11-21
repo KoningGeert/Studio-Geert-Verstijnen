@@ -108,7 +108,8 @@
       </button>
   
       <!-- Navigatie desktop -->
-      <nav class="hidden md:flex font-body space-x-6">
+      <nav class="hidden md:flex font-body gap-6">
+
         <a href="/" class="text-gray-700 hover:text-black flex items-center gap-2">
           <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-5 h-5">
           <span>Home</span>
@@ -276,7 +277,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column - Contact Form -->
                 <!-- Right Column - No Form, CTA Box Instead -->
 <div class="reveal" style="transition-delay: 0.2s">
   <div class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-gray-100">
@@ -360,95 +360,76 @@
     </div>
 </section>
 
-<script>
-    // Reveal on scroll animatie
-    const reveals = document.querySelectorAll('.reveal');
-    
-    const revealOnScroll = () => {
-        reveals.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('active');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
 
-    // Form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Show success message
-        const successMsg = document.getElementById('successMessage');
-        successMsg.classList.remove('hidden');
-        
-        // Reset form
-        this.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            successMsg.classList.add('hidden');
-        }, 5000);
-    });
-</script>
+  <footer class="w-full bg-gray-900 text-gray-100 py-12 relative overflow-hidden">
+  <!-- Subtiele gekleurde gloed op achtergrond -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen blur-3xl"></div>
+    <div class="absolute top-1/2 left-0 w-64 h-64 bg-red-500 rounded-full mix-blend-screen blur-3xl"></div>
+  </div>
 
-  <footer class="w-full bg-gray-900 text-gray-100 py-12 mt-20 relative overflow-hidden">
-    <!-- Subtiele gekleurde gloed op achtergrond -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <div class="absolute top-0 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen blur-3xl"></div>
-      <div class="absolute top-1/2 left-0 w-64 h-64 bg-red-500 rounded-full mix-blend-screen blur-3xl"></div>
-    </div>
-  
-    <!-- Inhoud -->
-    <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
-  
-      <!-- Logo + naam -->
-      <div class="flex items-center space-x-4 group">
-        <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
-          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
-        </div>
-        <div>
-          <h1 class="text-xl font-heading font-bold tracking-tight">Studio</h1>
-          <h2 class="text-sm font-body text-gray-400">Geert Verstijnen</h2>
-        </div>
+  <!-- Inhoud -->
+  <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+
+    <!-- Logo + naam -->
+    <div class="flex items-center space-x-4 group">
+      <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
+        <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+        <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+        <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+        <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
       </div>
-  
-      <!-- Navigatie -->
-      <nav class="font-body flex flex-col md:flex-row gap-3 md:gap-6 text-gray-300">
-        <a href="/" class="hover:text-white transition">Home</a>
-        <a href="/portfolio/" class="hover:text-white transition">Portfolio</a>
-        <a href="/over-mij/" class="hover:text-white transition">Over mij</a>
-        <a href="/contact/" class="hover:text-white transition">Contact</a>
-      </nav>
-  
-      <!-- Socials -->
-      <div class="flex flex-col md:items-end gap-4 font-body">
-        <h3 class="font-heading text-sm uppercase tracking-wide text-gray-400">Volg Studio Geert Verstijnen</h3>
-        <div class="flex gap-4">
-          <a href="https://github.com/KoningGeert" target="_blank" class="hover:scale-110 transition-transform">
-            <img src="/images/icons/github-mark.svg" alt="GitHub" class="w-6 h-6 font-white">
-          </a>
-          <a href="https://www.linkedin.com/in/geert-verstijnen-a3691320b/" target="_blank" class="hover:scale-110 transition-transform">
-            <img src="/images/icons/InBug-Black.png" alt="LinkedIn" class="w-6 h-6 font-white">
-          </a>
-        </div>
+      <div>
+        <h1 class="text-xl font-heading font-bold tracking-tight">Studio</h1>
+        <h2 class="text-sm font-body text-gray-400">Geert Verstijnen</h2>
       </div>
     </div>
-  
-    <!-- Copyright -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
-      <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+
+    <!-- Navigatie -->
+    <nav class="font-body flex flex-col md:flex-row gap-3 md:gap-6 text-gray-300">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/portfolio/" class="hover:text-white transition">Portfolio</a>
+      <a href="/over-mij/" class="hover:text-white transition">Over mij</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+    </nav>
+
+    <!-- Socials -->
+    <div class="flex flex-col md:items-end gap-4 font-body">
+      <h3 class="font-heading text-sm uppercase tracking-wide text-gray-400">Volg Studio Geert Verstijnen</h3>
+      <div class="flex gap-4">
+
+        <!-- GitHub (wit) -->
+        <a href="https://github.com/KoningGeert" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.9 1.4.9 1.4 0 .8-.4 1.3-.8 1.5 1 .1 2-.3 2.5-1.1-.3-.3-.5-.8-.5-1.5 0-.7.3-1.2.7-1.5C6.4 16.7 4 15.7 4 11.7c0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 4-2.4 5-4.7 5.3.4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn (wit) -->
+        <a href="https://www.linkedin.com/in/geert-verstijnen-a3691320b/" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M4.98 3.5a2.5 2.5 0 1 0 .02 5 2.5 2.5 0 0 0-.02-5zM3 8.98h4v12H3v-12zM14.5 9c-2.1 0-3.5 1.4-3.5 3.7v8.3h4v-7.7c0-1 .7-1.7 1.8-1.7 1.2 0 1.7.8 1.7 1.8v7.6h4v-8.3c0-3.6-2-5.7-5-5.7z"/>
+          </svg>
+        </a>
+
+        <!-- Spotify (wit) -->
+        <a href=https://open.spotify.com/artist/5xkaiv1BPyVDn8xmGhNr5D" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 168 168" fill="#ffffff">
+            <path d="M84 0a84 84 0 1 0 0 168A84 84 0 0 0 84 0zm38.6 121.1c-1.5 2.4-4.7 3.2-7.1 1.7-19.4-11.9-43.8-14.6-72.5-8-2.8.7-5.6-1-6.3-3.8-.7-2.8 1-5.6 3.8-6.3 31.9-7.4 60.1-4.2 82 9.5 2.4 1.5 3.2 4.7 1.7 7zm10.1-20.3c-1.9 3-5.9 4-8.9 2.1-22.2-13.7-56-17.7-82.3-9.8-3.3 1-6.9-.9-7.9-4.2-1-3.3.9-6.9 4.2-7.9 30.7-9.4 68.1-5.1 94 11.2 3 1.9 4 5.9 2.1 8.9zm1.1-21.6c-26.6-16.1-70.5-17.6-96.3-9.8-4 1.2-8.2-1-9.4-5-1.2-4 1-8.2 5-9.4 29.2-8.7 78-7 108.5 11.5 3.6 2.2 4.8 6.9 2.6 10.5-2.2 3.6-6.9 4.8-10.5 2.6z"/>
+          </svg>
+        </a>
+
+      </div>
     </div>
-  </footer>
-  
+  </div>
+
+  <!-- Copyright -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
+    <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
   <script src="/scripts/filterCards.js"></script>
   <script src="/scripts/revealOnScroll.js"></script>
   <script src="/scripts/index.js"></script>
