@@ -76,62 +76,56 @@
 <body class="font-body">
 
   <header class="w-full z-50">
-   <div class="container mx-auto">
+  <div class="container mx-auto">
   
     <!-- Bovenbalk -->
-    <div class="py-4 flex justify-between items-center container mx-auto">
+    <div class="py-4 flex justify-between items-center px-6 md:px-0">
       <!-- Logo -->
-      <div class="flex items-center space-x-3 group cube-wrapper">
-        <a href="/" class="flex items-center space-x-3">
-          <div class="grid grid-cols-2 grid-rows-2 w-10 h-10 cube-grid">
-            <img src="/images/Rood/Rood ZigZag.png" alt="Rood ZigZag" class="w-full h-full object-cover">
-            <img src="/images/Groen/Groen Hoek.png" alt="Groen Hoek" class="w-full h-full object-cover">
-            <img src="/images/Geel/Geel Cirkel.png" alt="Geel Cirkel" class="w-full h-full object-cover">
-            <img src="/images/Blauw/Blauw Bonen.png" alt="Blauw Bonen" class="w-full h-full object-cover">
-          </div>
-          <div class="flex flex-col">
-            <h1 class="text-lg font-bold font-heading leading-tight">Studio</h1>
-            <h2 class="text-xs font-body">Geert Verstijnen</h2>
-          </div>
-        </a>
-      </div>
-  
+      <a href="/" class="flex items-center space-x-3">
+        <div class="grid grid-cols-2 grid-rows-2 w-10 h-10">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-lg font-bold font-heading leading-tight">Studio</h1>
+          <h2 class="text-xs font-body">Geert Verstijnen</h2>
+        </div>
+      </a>
+
       <!-- Hamburger knop -->
       <button 
         id="menu-btn"
         class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none transition-transform"
         aria-label="Menu"
       >
-        <span class="block w-full h-0.5 bg-black transition-all"></span>
-        <span class="block w-full h-0.5 bg-black transition-all"></span>
-        <span class="block w-full h-0.5 bg-black transition-all"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
       </button>
-  
+
       <!-- Navigatie desktop -->
       <nav class="hidden md:flex font-body gap-6">
         <a href="/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-5 h-5">
-          <span>Home</span>
+          <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> <span>Home</span>
         </a>
         <a href="/portfolio/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-5 h-5">
-          <span>Portfolio</span>
+          <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> <span>Portfolio</span>
         </a>
         <a href="/over-mij/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-5 h-5">
-          <span>Over mij</span>
+          <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> <span>Over mij</span>
         </a>
         <a href="/contact/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-5 h-5">
-          <span>Contact</span>
+          <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> <span>Contact</span>
         </a>
       </nav>
     </div>
-  
+
     <!-- Mobiel menu -->
     <nav 
       id="mobile-menu" 
-      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden animate-slide-down"
+      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden"
     >
       <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
         <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
@@ -146,29 +140,21 @@
         <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> Contact
       </a>
     </nav>
+
   </div>
-  </header>
-  
-  <script>
-    // Mobiel menu toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    const toggleMenu = () => {
-      const isOpen = mobileMenu.classList.contains('flex');
-      if (isOpen) {
-        mobileMenu.classList.remove('flex');
-        mobileMenu.classList.add('hidden');
-      } else {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
-      }
-    };
-  
-    // Event listener toevoegen
-    menuBtn.addEventListener('click', toggleMenu);
-  </script>
-  
+</header>
+
+<script>
+  // Mobiel menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+</script>
+
 
   <!-- Content injectie -->
     <!-- Hero Section -->
@@ -360,8 +346,8 @@
 </section>
 
 
-  <footer class="w-full bg-gray-900 text-gray-100 py-12 relative overflow-hidden">
-  <div class="container mx-auto">
+  <footer class="bg-gray-900 text-gray-100 py-12 relative overflow-hidden">
+
   <!-- Subtiele gekleurde gloed op achtergrond -->
   <div class="absolute inset-0 opacity-10 pointer-events-none">
     <div class="absolute top-0 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen blur-3xl"></div>
@@ -370,16 +356,18 @@
   </div>
 
   <!-- Inhoud -->
-  <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+  <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 px-6 md:px-0">
 
     <!-- Logo + naam -->
     <div class="flex items-center space-x-4 group">
-      <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
-        <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
-        <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
-        <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
-        <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
-      </div>
+      <a href="/">
+        <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
+        </div>
+      </a>
       <div>
         <h1 class="text-xl font-heading font-bold tracking-tight">Studio</h1>
         <h2 class="text-sm font-body text-gray-400">Geert Verstijnen</h2>
@@ -413,8 +401,8 @@
           </svg>
         </a>
 
-        <!-- Spotify (wit) -->
-        <a href=https://open.spotify.com/artist/5xkaiv1BPyVDn8xmGhNr5D" target="_blank" class="hover:scale-110 transition-transform">
+        <!-- Spotify (wit) — fixed broken href -->
+        <a href="https://open.spotify.com/artist/5xkaiv1BPyVDn8xmGhNr5D" target="_blank" class="hover:scale-110 transition-transform">
           <svg class="w-6 h-6" viewBox="0 0 168 168" fill="#ffffff">
             <path d="M84 0a84 84 0 1 0 0 168A84 84 0 0 0 84 0zm38.6 121.1c-1.5 2.4-4.7 3.2-7.1 1.7-19.4-11.9-43.8-14.6-72.5-8-2.8.7-5.6-1-6.3-3.8-.7-2.8 1-5.6 3.8-6.3 31.9-7.4 60.1-4.2 82 9.5 2.4 1.5 3.2 4.7 1.7 7zm10.1-20.3c-1.9 3-5.9 4-8.9 2.1-22.2-13.7-56-17.7-82.3-9.8-3.3 1-6.9-.9-7.9-4.2-1-3.3.9-6.9 4.2-7.9 30.7-9.4 68.1-5.1 94 11.2 3 1.9 4 5.9 2.1 8.9zm1.1-21.6c-26.6-16.1-70.5-17.6-96.3-9.8-4 1.2-8.2-1-9.4-5-1.2-4 1-8.2 5-9.4 29.2-8.7 78-7 108.5 11.5 3.6 2.2 4.8 6.9 2.6 10.5-2.2 3.6-6.9 4.8-10.5 2.6z"/>
           </svg>
@@ -425,12 +413,13 @@
   </div>
 
   <!-- Copyright -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
+  <div class="relative z-10 container mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
     <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
   </div>
-</div>
+
 </footer>
 
+  <script src="/scripts/imageZoom.js"></script>
   <script src="/scripts/filterCards.js"></script>
   <script src="/scripts/revealOnScroll.js"></script>
   <script src="/scripts/index.js"></script>
