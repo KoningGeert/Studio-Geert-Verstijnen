@@ -125,7 +125,7 @@
     <!-- Mobiel menu -->
     <nav 
       id="mobile-menu" 
-      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden"
+      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
     >
       <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
         <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
@@ -545,10 +545,16 @@
 
   <!-- Copyright -->
   <div class="relative z-10 container mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
-    <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+    <p>&copy; <span id="year"></span> Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
   </div>
 
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = new Date().getFullYear();
+  });
+</script>
 
   <script src="/scripts/imageZoom.js"></script>
   <script src="/scripts/filterCards.js"></script>

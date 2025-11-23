@@ -125,7 +125,7 @@
     <!-- Mobiel menu -->
     <nav 
       id="mobile-menu" 
-      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden"
+      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
     >
       <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
         <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
@@ -280,11 +280,6 @@
   </div>
 
   <div class="container mx-auto px-6 relative z-10 text-center">
-    <div class="inline-block mb-6">
-      <span class="px-4 py-2 bg-blue-500/10 text-blue-600 rounded-full text-sm font-semibold border-2 border-blue-500/30">
-        🎨 Mijn Werk
-      </span>
-    </div>
     
     <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight font-heading">
       Recente <span class="text-gradient-blauw-groen">Projecten</span>
@@ -321,113 +316,166 @@
 <section class="py-24 bg-gray-50">
   <div class="container mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="projectGrid">
+  
       
-      <!-- Project 1 -->
-      <div class="project-card  bg-white shadow-xl" data-category="webdesign uxdesign">
-        <div class="aspect-[4/3] relative overflow-hidden">
-          <img src="/images/UnMundoMejor/UnMundoMejor-LandingPage.gif" 
-               alt="Un Mundo Mejor" 
-               class="project-image w-full h-full object-cover">
-        </div>
-        <div class="project-overlay">
-          <h3 class="text-3xl font-black text-white mb-3 font-heading">Un Mundo Mejor</h3>
-          <p class="text-white/90 mb-6 text-sm">Interactieve website met 3D animaties voor vrijwilligersorganisatie</p>
-          <div class="flex gap-2 mb-6 flex-wrap justify-center">
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">UX Design</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Eleventy</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">TailwindCSS</span>
-          </div>
-          <a href="/portfolio/un-mundo-mejor" class="inline-block px-6 py-3 bg-white text-blauw font-bold rounded-xl hover:scale-105 transition-transform">
-            Bekijk Project →
-          </a>
-        </div>
-      </div>
+        <div class="project-card bg-white shadow-xl" data-category="webdesignuxdesign">
 
-      <!-- Project 2 -->
-      <div class="project-card  bg-white shadow-xl" data-category="branding">
-        <div class="aspect-[4/3] relative overflow-hidden">
-          <img src="/images/StarryNight/StarryNightPaal.png" 
-               alt="TechStart Dashboard" 
-               class="project-image w-full h-full object-cover">
-        </div>
-        <div class="project-overlay">
-          <h3 class="text-3xl font-black text-white mb-3 font-heading">Starry Night Poster</h3>
-          <p class="text-white/90 mb-6 text-sm">Afstudeer opdracht voor semester grafisch design</p>
-          <div class="flex gap-2 mb-6 flex-wrap justify-center">
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshop</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Concepting</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Design</span>
-          </div>
-          <a href="/portfolio/StarryNight" class="inline-block px-6 py-3 bg-white text-blauw font-bold rounded-xl hover:scale-105 transition-transform">
-            Bekijk Project →
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card  bg-white shadow-xl" data-category="branding webdesign">
-        <div class="aspect-[4/3] relative overflow-hidden">
-          <img src="/images/HetVerhaalVanJeLeven/Hoofdpage.png" 
-               alt="Green Beans Café" 
-               class="project-image w-full h-full object-cover">
-        </div>
-        <div class="project-overlay">
-          <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Verhaal Van Je Leven</h3>
-          <p class="text-white/90 mb-6 text-sm">Complete branding & website voor het verhaal van je leven</p>
-          <div class="flex gap-2 mb-6 flex-wrap justify-center">
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Tailwind</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Branding</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Responsive</span>
-          </div>
-          <a href="/portfolio/HetVerhaalVanJeLeven" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
-            Bekijk Project →
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card  bg-white shadow-xl" data-category="webdesign uxdesign">
-        <div class="aspect-[4/3] relative overflow-hidden">
-          <img src="/images/HetNieuweFamilieopstellen/Hoofdpage.png" 
-               alt="3D Portfolio Experience" 
-               class="project-image w-full h-full object-cover">
-        </div>
-        <div class="project-overlay">
-          <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Nieuwe Familieopstellen</h3>
-          <p class="text-white/90 mb-6 text-sm">Een custom wordpress website voor het Nieuwe Familieopstellen</p>
-          <div class="flex gap-2 mb-6 flex-wrap justify-center">
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Wordpress</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Plugin</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Responsive</span>
-          </div>
-          <a href="/portfolio/HetNieuweFamilieopstellen" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
-            Bekijk Project →
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project-card  bg-white shadow-xl" data-category="webdesign branding">
-        <div class="aspect-[4/3] relative overflow-hidden">
-          <img src="/images/Banner.svg" 
-               alt="FitLife App Landing" 
-               class="project-image w-full h-full object-cover">
-        </div>
-        <div class="project-overlay">
-          <h3 class="text-3xl font-black text-white mb-3 font-heading">Studio Geert Verstijnen</h3>
-          <p class="text-white/90 mb-6 text-sm">De branding van mijn eigen bedrijf Studio Geert Verstijnen</p>
-          <div class="flex gap-2 mb-6 flex-wrap justify-center">
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Illustrator</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshop</span>
-            <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Design</span>
-          </div>
-          <a href="/portfolio/Studio-Geert-Verstijnen" class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
-            Bekijk Project →
-          </a>
-        </div>
-      </div>
-
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="/images/UnMundoMejor/UnMundoMejor-LandingPage.gif" 
+           alt="Un Mundo Mejor" 
+           class="project-image w-full h-full object-cover">
     </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">Un Mundo Mejor</h3>
+      <p class="text-white/90 mb-6 text-sm">Interactieve website met 3D animaties voor vrijwilligersorganisatie</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">UX Design</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Eleventy</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">TailwindCSS</span>
+        
+      </div>
+  
+      <a href="/portfolio/un-mundo-mejor" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  
+      
+        <div class="project-card bg-white shadow-xl" data-category="branding">
+
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="/images/StarryNight/StarryNightPaal.png" 
+           alt="Starry Night Poster" 
+           class="project-image w-full h-full object-cover">
+    </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">Starry Night Poster</h3>
+      <p class="text-white/90 mb-6 text-sm">Afstudeer opdracht voor semester grafisch design</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshop</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Concepting</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Design</span>
+        
+      </div>
+  
+      <a href="/portfolio/StarryNight" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  
+      
+        <div class="project-card bg-white shadow-xl" data-category="brandingwebdesign">
+
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="/images/HetVerhaalVanJeLeven/Hoofdpage.png" 
+           alt="Het Verhaal Van Je Leven" 
+           class="project-image w-full h-full object-cover">
+    </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Verhaal Van Je Leven</h3>
+      <p class="text-white/90 mb-6 text-sm">Complete branding & website voor het verhaal van je leven</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Tailwind</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Branding</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Responsive</span>
+        
+      </div>
+  
+      <a href="/portfolio/HetVerhaalVanJeLeven" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  
+      
+        <div class="project-card bg-white shadow-xl" data-category="webdesignuxdesign">
+
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="/images/HetNieuweFamilieopstellen/Hoofdpage.png" 
+           alt="Het Nieuwe Familieopstellen" 
+           class="project-image w-full h-full object-cover">
+    </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">Het Nieuwe Familieopstellen</h3>
+      <p class="text-white/90 mb-6 text-sm">Een custom wordpress website voor het Nieuwe Familieopstellen</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Wordpress</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Plugin</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Responsive</span>
+        
+      </div>
+  
+      <a href="/portfolio/HetNieuweFamilieopstellen" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  
+      
+        <div class="project-card bg-white shadow-xl" data-category="webdesignbranding">
+
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="/images/Banner.svg" 
+           alt="Studio Geert Verstijnen" 
+           class="project-image w-full h-full object-cover">
+    </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">Studio Geert Verstijnen</h3>
+      <p class="text-white/90 mb-6 text-sm">De branding van mijn eigen bedrijf Studio Geert Verstijnen</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Illustrator</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Photoshop</span>
+        
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Design</span>
+        
+      </div>
+  
+      <a href="/portfolio/Studio-Geert-Verstijnen" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  
+      
+    
+    </div>
+    
   </div>
 </section>
 
@@ -523,10 +571,16 @@
 
   <!-- Copyright -->
   <div class="relative z-10 container mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
-    <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+    <p>&copy; <span id="year"></span> Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
   </div>
 
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = new Date().getFullYear();
+  });
+</script>
 
   <script src="/scripts/imageZoom.js"></script>
   <script src="/scripts/filterCards.js"></script>

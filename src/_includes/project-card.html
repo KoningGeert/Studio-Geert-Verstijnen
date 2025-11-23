@@ -1,0 +1,26 @@
+<div class="project-card bg-white shadow-xl" data-category="{{ project.category }}">
+
+    <div class="aspect-[4/3] relative overflow-hidden">
+      <img src="{{ project.image }}" 
+           alt="{{ project.title }}" 
+           class="project-image w-full h-full object-cover">
+    </div>
+  
+    <div class="project-overlay">
+      <h3 class="text-3xl font-black text-white mb-3 font-heading">{{ project.title }}</h3>
+      <p class="text-white/90 mb-6 text-sm">{{ project.description }}</p>
+  
+      <div class="flex gap-2 mb-6 flex-wrap justify-center">
+        {% for tag in project.tags %}
+        <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">{{ tag }}</span>
+        {% endfor %}
+      </div>
+  
+      <a href="/portfolio/{{ project.slug }}" 
+         class="inline-block px-6 py-3 bg-white text-blue-600 font-bold rounded-xl hover:scale-105 transition-transform">
+        Bekijk Project →
+      </a>
+    </div>
+  
+  </div>
+  

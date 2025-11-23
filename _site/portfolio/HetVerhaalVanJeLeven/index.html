@@ -125,7 +125,7 @@
     <!-- Mobiel menu -->
     <nav 
       id="mobile-menu" 
-      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden"
+      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
     >
       <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
         <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
@@ -429,7 +429,7 @@
             <img src="/images/StarryNight/StarryNightPaal.png" 
                  alt="TechStart Dashboard" 
                  class="w-full h-auto">
-            <div class="absolute inset-0 bg-gradient-to-t from-blue-600/90 to-transparent flex items-end p-10">
+            <div class="hidden md:flex absolute inset-0 bg-gradient-to-t from-blue-600/90 to-transparent items-end p-10">
               <div class="text-left">
                 <h3 class="text-4xl font-black text-white mb-2 font-heading">Starry Night</h3>
                 <p class="text-white/90 text-lg">          Een poster voor de finale opdracht van het semester tijdens mijn minor Grafisch Design, die lichtvervuiling onder de aandacht brengt.
@@ -492,7 +492,7 @@
     <!-- Mobiel menu -->
     <nav 
       id="mobile-menu" 
-      class="hidden flex-col font-body bg-gray-100 border-t border-gray-200 shadow-inner md:hidden"
+      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
     >
       <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
         <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
@@ -592,10 +592,16 @@
 
   <!-- Copyright -->
   <div class="relative z-10 container mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
-    <p>&copy; 2025 Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+    <p>&copy; <span id="year"></span> Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
   </div>
 
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = new Date().getFullYear();
+  });
+</script>
 
   <script src="/scripts/imageZoom.js"></script>
   <script src="/scripts/filterCards.js"></script>

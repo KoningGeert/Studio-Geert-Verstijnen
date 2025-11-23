@@ -1,0 +1,43 @@
+[
+    {
+      "title": "Un Mundo Mejor",
+      "slug": "un-mundo-mejor",
+      "image": "/images/UnMundoMejor/UnMundoMejor-LandingPage.gif",
+      "description": "Interactieve website met 3D animaties voor vrijwilligersorganisatie",
+      "tags": ["UX Design", "Eleventy", "TailwindCSS"],
+      "category": ["webdesign", "uxdesign"]
+    },
+    {
+      "title": "Starry Night Poster",
+      "slug": "StarryNight",
+      "image": "/images/StarryNight/StarryNightPaal.png",
+      "description": "Afstudeer opdracht voor semester grafisch design",
+      "tags": ["Photoshop", "Concepting", "Design"],
+      "category": ["branding"]
+    },
+    {
+      "title": "Het Verhaal Van Je Leven",
+      "slug": "HetVerhaalVanJeLeven",
+      "image": "/images/HetVerhaalVanJeLeven/Hoofdpage.png",
+      "description": "Complete branding & website voor het verhaal van je leven",
+      "tags": ["Tailwind", "Branding", "Responsive"],
+      "category": ["branding", "webdesign"]
+    },
+    {
+      "title": "Het Nieuwe Familieopstellen",
+      "slug": "HetNieuweFamilieopstellen",
+      "image": "/images/HetNieuweFamilieopstellen/Hoofdpage.png",
+      "description": "Een custom wordpress website voor het Nieuwe Familieopstellen",
+      "tags": ["Wordpress", "Plugin", "Responsive"],
+      "category": ["webdesign", "uxdesign"]
+    },
+    {
+      "title": "Studio Geert Verstijnen",
+      "slug": "Studio-Geert-Verstijnen",
+      "image": "/images/Banner.svg",
+      "description": "De branding van mijn eigen bedrijf Studio Geert Verstijnen",
+      "tags": ["Illustrator", "Photoshop", "Design"],
+      "category": ["webdesign", "branding"]
+    }
+  ]
+  
