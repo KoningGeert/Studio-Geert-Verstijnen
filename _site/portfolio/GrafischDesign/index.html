@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grafisch Design</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo.png">
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="/styles/input.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Gothic+A1&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+<meta name="description" content="Studio Geert Verstijnen — creatief front-end developer en webdesigner. Ontwikkeling van moderne, minimalistische websites met oog voor detail, performance en design.">
+<meta name="keywords" content="Studio Geert Verstijnen, Geert Verstijnen, front-end developer, web developer, website designer, webdesign studio, creative developer, digital designer, UI designer, UX design, portfolio websites, interactive design, creative coding, TailwindCSS, JavaScript, HTML, CSS, 3D web, motion design, branding, minimal design, modern websites, web development Nederland, freelance developer, creative studio">
+<meta name="author" content="Studio Geert Verstijnen">
+<meta name="robots" content="index, follow">
+<meta name="language" content="nl">
+<meta property="og:title" content="Studio Geert Verstijnen — Front-End Developer & Web Designer">
+<meta property="og:description" content="Creatieve front-end developer gespecialiseerd in moderne, interactieve websites met een minimalistische stijl.">
+<meta property="og:image" content="/images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://studiogeertverstijnen.nl/">
+<meta name="twitter:card" content="summary_large_image">
+
+  <!-- Animatie -->
+  <style>
+    @keyframes pulseGlow {
+      0% {
+        filter: drop-shadow(0 0 15px var(--cube-blue))
+                drop-shadow(0 0 25px var(--cube-yellow))
+                drop-shadow(0 0 35px var(--cube-red))
+                drop-shadow(0 0 45px var(--cube-green));
+      }
+      50% {
+        filter: drop-shadow(0 0 30px var(--cube-yellow))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-green))
+                drop-shadow(0 0 80px var(--cube-red));
+      }
+      100% {
+        filter: drop-shadow(0 0 20px var(--cube-green))
+                drop-shadow(0 0 30px var(--cube-red))
+                drop-shadow(0 0 50px var(--cube-blue))
+                drop-shadow(0 0 60px var(--cube-yellow));
+      }
+    }
+
+    .bg-blauw { background-color: #0c89ff; }
+        .bg-geel { background-color: #ffc90f; }
+        .bg-groen { background-color: #2f7339; }
+        .bg-rood { background-color: #fd3f03; }
+        .text-blauw { color: #0c89ff; }
+        .text-geel { color: #ffc90f; }
+        .text-groen { color: #2f7339; }
+        .text-rood { color: #fd3f03; }
+        .border-blauw { border-color: #0c89ff; }
+        .border-geel { border-color: #ffc90f; }
+        .border-groen { border-color: #2f7339; }
+        .border-rood { border-color: #fd3f03; }
+        .text-gradient-blauw-groen {
+  background: linear-gradient(135deg, #0c89ff, #2f7339);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+  </style>
+</head>
+<body class="font-body">
+
+  <header class="w-full z-50">
+  <div class="container mx-auto">
+  
+    <!-- Bovenbalk -->
+    <div class="py-4 flex justify-between items-center px-6 md:px-0">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3">
+        <div class="grid grid-cols-2 grid-rows-2 w-10 h-10">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-lg font-bold font-heading leading-tight">Studio</h1>
+          <h2 class="text-xs font-body">Geert Verstijnen</h2>
+        </div>
+      </a>
+
+      <!-- Hamburger knop -->
+      <button 
+        id="menu-btn"
+        class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none transition-transform"
+        aria-label="Menu"
+      >
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+        <span class="block w-full h-0.5 bg-black"></span>
+      </button>
+
+      <!-- Navigatie desktop -->
+      <nav class="hidden md:flex font-body gap-6">
+        <a href="/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> <span>Home</span>
+        </a>
+        <a href="/portfolio/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> <span>Portfolio</span>
+        </a>
+        <a href="/over-mij/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> <span>Over mij</span>
+        </a>
+        <a href="/contact/" class="text-gray-700 hover:text-black flex items-center gap-2">
+          <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Mobiel menu -->
+    <nav 
+      id="mobile-menu" 
+      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
+    >
+      <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
+      </a>
+      <a href="/portfolio/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> Portfolio
+      </a>
+      <a href="/over-mij/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> Over mij
+      </a>
+      <a href="/contact/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
+        <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> Contact
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  // Mobiel menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+</script>
+
+
+  <!-- Content injectie -->
+  
+
+  <!-- Back Button -->
+  <div class="container mx-auto pt-8 px-6 md:px-0">
+    <a href="/portfolio" class="back-button inline-flex items-center text-lg font-bold text-blauw hover:text-groen transition-colors">
+      <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Terug naar portfolio
+    </a>
+  </div>
+
+  <!-- <section class="py-8">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal flex flex-wrap gap-3 justify-center">
+          <span class="floating-badge tech-badge px-5 py-2 bg-blue-600/10 text-blue-600 rounded-full text-sm font-semibold border-2 border-blue-600/30">
+            UX Design
+          </span>
+          <span class="floating-badge tech-badge px-5 py-2 bg-yellow-500/10 text-yellow-600 rounded-full text-sm font-semibold border-2 border-yellow-500/30" style="animation-delay: 0.2s;">
+            TailwindCSS
+          </span>
+          <span class="floating-badge tech-badge px-5 py-2 bg-red-600/10 text-red-600 rounded-full text-sm font-semibold border-2 border-red-600/30" style="animation-delay: 0.4s;">
+            Eleventy
+          </span>
+
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Hero Image Section - FIRST! -->
+  <section class="py-12">
+    <div class="container mx-auto px-6 md:px-0">
+      <div class=" mx-auto">
+        <div class="reveal hero-image">
+          <img src="/images/GrafischDesign/Artboard 1.jpg" 
+               alt="Un Mundo Mejor Homepage" 
+               class="w-full h-auto object-cover cursor-pointer"
+               onclick="openModal(this)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info Bar -->
+ 
+
+  <!-- Title & Description -->
+  <section class="py-16">
+    <div class="container mx-auto px-6 md:px-0">
+      <div class=" mx-auto text-center">
+        <div class="reveal mb-6">
+          <!-- <span class="px-4 py-2 bg-green-700/10 text-green-700 rounded-full text-sm font-semibold border-2 border-green-700/30">
+            🏆 Featured Project
+          </span> -->
+        </div>
+        
+        <h1 class="reveal text-5xl md:text-7xl font-black mb-6 leading-tight font-heading">
+          Minor grafisch <span class="text-gradient-blauw-groen">design</span>
+        </h1>
+        
+        <p class="reveal text-xl md:text-2xl text-gray-600 mb-8">
+            Een collectie van mijn beste werken tijdens mijn semester grafisch design aan de Fontys in Tilburg.
+        </p>
+
+        <div class="reveal">
+            <!-- <a href="https://hetverhaalvanjeleven.nl" target="_blank"
+               class="inline-block mt-2 px-8 py-3 bg-blauw text-white font-semibold rounded-full shadow-lg hover:bg-groen transition-colors">
+              🔗 Bekijk de website
+            </a> -->
+          </div>
+          
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-0">
+      <div class=" mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Two medium images -->
+          <div class="reveal image-gallery-item" onclick="openModal(this)">
+            <img src="/images/GrafischDesign/Voorkant.png" 
+                 alt="3D Globe Feature" 
+                 class="w-full h-auto object-cover aspect-[4/3]">
+          </div>
+          
+          <div class="reveal image-gallery-item" onclick="openModal(this)">
+            <img src="/images/GrafischDesign/To Pimp a butterfly.png" 
+                 alt="About Section" 
+                 class="w-full h-auto object-cover aspect-[4/3]">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="reveal image-gallery-item" onclick="openModal(this)">
+            <img src="/images/GrafischDesign/Tulip.png" 
+                 alt="Projects Overview" 
+                 class="w-full h-auto object-cover aspect-square">
+          </div>
+          
+          <div class="reveal image-gallery-item" onclick="openModal(this)">
+            <img src="/images/GrafischDesign/White Modern Brutalism Blindness Wall Poster.png" 
+                 alt="Mobile Design" 
+                 class="w-full h-auto object-cover aspect-square">
+          </div>
+          
+          <div class="reveal image-gallery-item" onclick="openModal(this)">
+            <img src="/images/GrafischDesign/Artboard 1.jpg" 
+                 alt="Contact Form" 
+                 class="w-full h-auto object-cover aspect-square">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Stats Section -->
+  <!-- <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
+          <div class="text-4xl font-black text-blue-600 mb-2 font-heading">14</div>
+          <div class="text-sm text-gray-600 font-semibold">Unieke UI componenten</div>
+        </div>
+        <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
+          <div class="text-4xl font-black text-green-700 mb-2 font-heading">3</div>
+          <div class="text-sm text-gray-600 font-semibold">Beschikbare talen</div>
+        </div>
+        <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
+          <div class="text-4xl font-black text-yellow-600 mb-2 font-heading">100%</div>
+          <div class="text-sm text-gray-600 font-semibold">Responsive design</div>
+        </div>
+        <div class="stats-card bg-gray-50 p-6 rounded-2xl text-center">
+          <div class="text-4xl font-black text-red-600 mb-2 font-heading">95+</div>
+          <div class="text-sm text-gray-600 font-semibold">Lighthouse score</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Project Details -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-0">
+      <div class="mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 mb-16">
+          <!-- Challenge -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-black mb-6 font-heading">
+              De <span class="text-gradient-blauw-groen">Uitdaging</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Tijdens mijn semester aan Fontys in Tilburg kreeg ik de kans om me volledig onder te dompelen in de wereld van grafisch design. In een omgeving waar creativiteit en samenwerking centraal staan, werkte ik samen met diverse teams aan omvangrijke, conceptgedreven opdrachten. Deze dynamiek daagde me uit om verder te kijken dan mijn eigen ideeën en om visuele oplossingen te creëren die passen binnen een groter geheel.            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Naast de groepsprojecten kreeg ik ook de ruimte om zelfstandig te experimenteren. In mijn vrije tijd ontwikkelde ik eigen ontwerpen — kleinere, persoonlijke projecten waarin ik nieuwe stijlen en technieken verkende. Die combinatie van samenwerken en individueel creëren heeft mijn groei als ontwerper enorm versneld.
+            </div>
+          <!-- Solution -->
+          <div>
+            <h2 class="text-3xl md:text-4xl font-black mb-6 font-heading">
+              De <span class="text-gradient-blauw-groen">Oplossing</span>
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Op deze pagina vind je een selectie van het werk dat ik in die periode heb gemaakt. Van grootschalige groepsopdrachten tot mijn eigen vrije ontwerpen: samen vormen ze een beeld van hoe ik mijn grafische vaardigheden heb ontwikkeld. Elk project laat zien hoe ik concept, vorm en techniek heb onderzocht — en hoe Fontys me heeft geholpen om mijn creatieve richting helder te krijgen.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Deze verzameling is meer dan alleen een overzicht; het is een momentopname van een leerzame fase waarin ik mijn visuele stem verder heb mogen vormgeven.          </div>
+        </div>
+
+        <!-- Features List -->
+        <!-- <div class="bg-white rounded-3xl p-10 shadow-xl mb-16">
+          <h3 class="text-2xl font-black mb-8 font-heading">Key Features</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl">
+                ⚡
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Lightning Fast</h4>
+                <p class="text-sm text-gray-600">Geoptimaliseerd voor snelle laadtijden op alle devices</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-green-700 rounded-xl flex items-center justify-center text-white text-xl">
+                🌍
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">3D Globe Visualisatie</h4>
+                <p class="text-sm text-gray-600">Interactieve wereldkaart met projectlocaties</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center text-white text-xl">
+                📱
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Fully Responsive</h4>
+                <p class="text-sm text-gray-600">Perfect weergave op desktop, tablet en mobile</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white text-xl">
+                ♿
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 mb-1">Accessible Design</h4>
+                <p class="text-sm text-gray-600">WCAG compliant voor maximale toegankelijkheid</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-gradient-to-br from-blue-600 to-green-700 rounded-3xl p-12 text-white shadow-2xl">
+          <h2 class="text-4xl md:text-5xl font-black mb-8 font-heading">
+            Het Resultaat
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div class="text-5xl font-black mb-2">250%</div>
+              <p class="text-white/90">Meer website bezoekers</p>
+            </div>
+            <div>
+              <div class="text-5xl font-black mb-2">4.2x</div>
+              <p class="text-white/90">Hogere engagement rate</p>
+            </div>
+            <div>
+              <div class="text-5xl font-black mb-2">180%</div>
+              <p class="text-white/90">Meer vrijwilligersaanmeldingen</p>
+            </div>
+          </div>
+          <p class="text-lg text-white/90 leading-relaxed">
+            De nieuwe website heeft niet alleen de online aanwezigheid van Un Mundo Mejor getransformeerd, maar ook direct bijgedragen aan hun missie door meer mensen te bereiken en te activeren voor hun projecten wereldwijd.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <div class="relative w-full overflow-hidden">
+    <img
+      src="/images/icon Row 13.svg"
+      alt=""
+      class="w-full h-auto"
+    />
+  </div>
+  <!-- Next Project -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-0">
+      <div class=" mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-black mb-8 font-heading">
+          Volgende Project
+        </h2>
+        <a href="/portfolio/StarryNight" class="group block">
+          <div class="relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-3xl">
+            <img src="/images/StarryNight/StarryNightPaal.png" 
+                 alt="TechStart Dashboard" 
+                 class="w-full h-auto">
+            <div class="hidden md:flex absolute inset-0 bg-gradient-to-t from-blue-600/90 to-transparent items-end p-10">
+              <div class="text-left">
+                <h3 class="text-4xl font-black text-white mb-2 font-heading">Starry Night</h3>
+                <p class="text-white/90 text-lg">          Een poster voor de finale opdracht van het semester tijdens mijn minor Grafisch Design, die lichtvervuiling onder de aandacht brengt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+
+  <footer class="bg-gray-900 text-gray-100 py-12 relative overflow-hidden">
+
+  <!-- Subtiele gekleurde gloed op achtergrond -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-screen blur-3xl"></div>
+    <div class="absolute top-1/2 left-0 w-64 h-64 bg-red-500 rounded-full mix-blend-screen blur-3xl"></div>
+  </div>
+
+  <!-- Inhoud -->
+  <div class="relative z-10 container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12 px-6 md:px-0">
+
+    <!-- Logo + naam -->
+    <div class="flex items-center space-x-4 group">
+      <a href="/">
+        <div class="w-14 h-14 grid grid-cols-2 grid-rows-2 transform">
+          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
+          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
+        </div>
+      </a>
+      <div>
+        <h1 class="text-xl font-heading font-bold tracking-tight">Studio</h1>
+        <h2 class="text-sm font-body text-gray-400">Geert Verstijnen</h2>
+      </div>
+    </div>
+
+    <!-- Navigatie -->
+    <nav class="font-body flex flex-col md:flex-row gap-3 md:gap-6 text-gray-300">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/portfolio/" class="hover:text-white transition">Portfolio</a>
+      <a href="/over-mij/" class="hover:text-white transition">Over mij</a>
+      <a href="/contact/" class="hover:text-white transition">Contact</a>
+    </nav>
+
+    <!-- Socials -->
+    <div class="flex flex-col md:items-end gap-4 font-body">
+      <h3 class="font-heading text-sm uppercase tracking-wide text-gray-400">Volg Studio Geert Verstijnen</h3>
+      <div class="flex gap-4">
+
+        <!-- GitHub (wit) -->
+        <a href="https://github.com/KoningGeert" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.9 1.4.9 1.4 0 .8-.4 1.3-.8 1.5 1 .1 2-.3 2.5-1.1-.3-.3-.5-.8-.5-1.5 0-.7.3-1.2.7-1.5C6.4 16.7 4 15.7 4 11.7c0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 4-2.4 5-4.7 5.3.4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn (wit) -->
+        <a href="https://www.linkedin.com/in/geert-verstijnen-a3691320b/" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M4.98 3.5a2.5 2.5 0 1 0 .02 5 2.5 2.5 0 0 0-.02-5zM3 8.98h4v12H3v-12zM14.5 9c-2.1 0-3.5 1.4-3.5 3.7v8.3h4v-7.7c0-1 .7-1.7 1.8-1.7 1.2 0 1.7.8 1.7 1.8v7.6h4v-8.3c0-3.6-2-5.7-5-5.7z"/>
+          </svg>
+        </a>
+
+        <!-- Spotify (wit) — fixed broken href -->
+        <a href="https://open.spotify.com/artist/5xkaiv1BPyVDn8xmGhNr5D" target="_blank" class="hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 168 168" fill="#ffffff">
+            <path d="M84 0a84 84 0 1 0 0 168A84 84 0 0 0 84 0zm38.6 121.1c-1.5 2.4-4.7 3.2-7.1 1.7-19.4-11.9-43.8-14.6-72.5-8-2.8.7-5.6-1-6.3-3.8-.7-2.8 1-5.6 3.8-6.3 31.9-7.4 60.1-4.2 82 9.5 2.4 1.5 3.2 4.7 1.7 7zm10.1-20.3c-1.9 3-5.9 4-8.9 2.1-22.2-13.7-56-17.7-82.3-9.8-3.3 1-6.9-.9-7.9-4.2-1-3.3.9-6.9 4.2-7.9 30.7-9.4 68.1-5.1 94 11.2 3 1.9 4 5.9 2.1 8.9zm1.1-21.6c-26.6-16.1-70.5-17.6-96.3-9.8-4 1.2-8.2-1-9.4-5-1.2-4 1-8.2 5-9.4 29.2-8.7 78-7 108.5 11.5 3.6 2.2 4.8 6.9 2.6 10.5-2.2 3.6-6.9 4.8-10.5 2.6z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="relative z-10 container mx-auto px-6 mt-10 border-t border-gray-800 pt-6 text-sm text-gray-400 text-center md:text-left">
+    <p>&copy; <span id="year"></span> Studio Geert Verstijnen. Alle rechten voorbehouden.</p>
+  </div>
+
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = new Date().getFullYear();
+  });
+</script>
+
+  <script src="/scripts/imageZoom.js"></script>
+  <script src="/scripts/filterCards.js"></script>
+  <script src="/scripts/revealOnScroll.js"></script>
+  <script src="/scripts/index.js"></script>
+  <script src="/scripts/parralax.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JN2QNFGMPG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JN2QNFGMPG');
+</script>
+</body>
+</html>

@@ -38,6 +38,14 @@
       "description": "De branding van mijn eigen bedrijf Studio Geert Verstijnen",
       "tags": ["Illustrator", "Photoshop", "Design"],
       "category": ["webdesign", "branding"]
-    }
+    },
+    {
+        "title": "Semester Grafisch Design",
+        "slug": "GrafischDesign",
+        "image": "/images/GrafischDesign/Artboard 1.jpg",
+        "description": "Een collectie van mijn beste werken tijdens mijn semester grafisch design",
+        "tags": ["Illustrator", "Photoshop", "Design"],
+        "category": ["branding"]
+      }
   ]
   
