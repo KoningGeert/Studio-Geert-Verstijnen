@@ -476,86 +476,10 @@
     </div>
   </section>
 
-  <header class="w-full z-50">
-  <div class="container mx-auto">
-  
-    <!-- Bovenbalk -->
-    <div class="py-4 flex justify-between items-center px-6 md:px-0">
-      <!-- Logo -->
-      <a href="/" class="flex items-center space-x-3">
-        <div class="grid grid-cols-2 grid-rows-2 w-10 h-10">
-          <img src="/images/Rood/Rood ZigZag.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Groen/Groen Hoek.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Geel/Geel Cirkel.png" alt="" class="w-full h-full object-cover">
-          <img src="/images/Blauw/Blauw Bonen.png" alt="" class="w-full h-full object-cover">
-        </div>
-        <div class="flex flex-col">
-          <h1 class="text-lg font-bold font-heading leading-tight">Studio</h1>
-          <h2 class="text-xs font-body">Geert Verstijnen</h2>
-        </div>
-      </a>
-
-      <!-- Hamburger knop -->
-      <button 
-        id="menu-btn"
-        class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none transition-transform"
-        aria-label="Menu"
-      >
-        <span class="block w-full h-0.5 bg-black"></span>
-        <span class="block w-full h-0.5 bg-black"></span>
-        <span class="block w-full h-0.5 bg-black"></span>
-      </button>
-
-      <!-- Navigatie desktop -->
-      <nav class="hidden md:flex font-body gap-6">
-        <a href="/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> <span>Home</span>
-        </a>
-        <a href="/portfolio/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> <span>Portfolio</span>
-        </a>
-        <a href="/over-mij/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> <span>Over mij</span>
-        </a>
-        <a href="/contact/" class="text-gray-700 hover:text-black flex items-center gap-2">
-          <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> <span>Contact</span>
-        </a>
-      </nav>
-    </div>
-
-    <!-- Mobiel menu -->
-    <nav 
-      id="mobile-menu" 
-      class="hidden flex-col font-body border-t border-gray-200 shadow-inner md:hidden"
-    >
-      <a href="/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
-        <img src="/images/Rood/Rood ZigZag.png" class="w-5 h-5"> Home
-      </a>
-      <a href="/portfolio/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
-        <img src="/images/Groen/Groen Hoek.png" class="w-5 h-5"> Portfolio
-      </a>
-      <a href="/over-mij/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
-        <img src="/images/Geel/Geel Cirkel.png" class="w-5 h-5"> Over mij
-      </a>
-      <a href="/contact/" class="px-6 py-3 flex items-center gap-2 text-gray-700 hover:bg-gray-200">
-        <img src="/images/Blauw/Blauw Bonen.png" class="w-5 h-5"> Contact
-      </a>
-    </nav>
-
+    <div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
   </div>
-</header>
-
-<script>
-  // Mobiel menu toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
-  });
-</script>
-
 
 
   <footer class="bg-gray-900 text-gray-100 py-12 relative overflow-hidden">
