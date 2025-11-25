@@ -410,13 +410,47 @@
     </div>
   </section> -->
 
-  <div class="relative w-full overflow-hidden">
-    <img
-      src="/images/icon Row 13.svg"
-      alt=""
-      class="w-full h-auto"
-    />
+  <section
+  id="icon-row-container"
+  class="relative w-full overflow-hidden"
+>
+  <div class="marquee w-full overflow-hidden" data-base-speed="1.2">
+    <div
+      id="moving-icon-row"
+      class="inner flex flex-nowrap whitespace-nowrap will-change-transform"
+    >
+      <div class="track flex shrink-0 items-center">
+        <img src="/images/Rood/Rood Bonen.png" alt="" />
+        <img src="/images/Geel/Geel Cirkel.png" alt="" />
+        <img src="/images/Groen/Groen Hoek.png" alt="" />
+        <img src="/images/Blauw/Blauw ZigZag.png" alt="" />
+      </div>
+
+      <div class="track flex shrink-0 items-center">
+        <img src="/images/Geel/Geel Bonen.png" alt="" />
+        <img src="/images/Groen/Rood Cirkel.png" alt="" />
+        <img src="/images/Blauw/Blauw Hoek.png" alt="" />
+        <img src="/images/Rood/Rood ZigZag.png" alt="" />
+      </div>
+
+      <div class="track flex shrink-0 items-center">
+        <img src="/images/Groen/Groen Bonen.png" alt="" />
+        <img src="/images/Blauw/Blauw Cirkel.png" alt="" />
+        <img src="/images/Rood/Rood Hoek.png" alt="" />
+        <img src="/images/Geel/Geel ZigZag.png" alt="" />
+      </div>
+
+      <div class="track flex shrink-0 items-center">
+        <img src="/images/Geel/Geel Bonen.png" alt="" />
+        <img src="/images/Groen/Rood Cirkel.png" alt="" />
+        <img src="/images/Blauw/Blauw Hoek.png" alt="" />
+        <img src="/images/Rood/Rood ZigZag.png" alt="" />
+      </div>
+    </div>
   </div>
+</section>
+
+
   <!-- Next Project -->
   <section class="py-24 bg-gray-50">
     <div class="container mx-auto px-6 md:px-0">
@@ -607,7 +641,7 @@
   <script src="/scripts/filterCards.js"></script>
   <script src="/scripts/revealOnScroll.js"></script>
   <script src="/scripts/index.js"></script>
-  <script src="/scripts/parralax.js"></script>
+  <script src="/scripts/marqueeScroll.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JN2QNFGMPG"></script>

@@ -333,4 +333,25 @@
       box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
     }
 
-  
+
+    
+    .marquee img {
+      width: 320px;   /* Kies zelf formaat */
+      height: auto;
+    }
+     */
+        /* Er mag GEEN animation of @keyframes meer op #moving-icon-row staan! */
+#moving-icon-row {
+  width: 300%; 
+  /* GEEN animation: marquee-scroll ... */
+}
+
+/* De rest van je Tailwind/Utility classes: */
+.marquee { overflow: hidden; }
+.marquee .inner { display: flex; white-space: nowrap; }
+.marquee .track { display: flex; flex-shrink: 0; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
